@@ -117,3 +117,1827 @@
   INFO [69a14d34] Running /usr/bin/env echo "Branch master (at 5f760f12653547272bb1cea37ae5e9478c50bab7) deployed as release 20170104224209 by ewingate" >> /var/www/html/golf/revisions.log as pi@rasp
  DEBUG [69a14d34] Command: cd /var/www/html/golf/releases && /usr/bin/env echo "Branch master (at 5f760f12653547272bb1cea37ae5e9478c50bab7) deployed as release 20170104224209 by ewingate" >> /var/www/html/golf/revisions.log
   INFO [69a14d34] Finished in 0.039 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-04 16:43:13 -0600 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [66c10421] Running /usr/bin/env mkdir -p /tmp as pi@rasp
+ DEBUG [66c10421] Command: /usr/bin/env mkdir -p /tmp
+  INFO [66c10421] Finished in 0.287 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Golf-production-ewingate.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Golf-production-ewingate.sh 100.0%
+  INFO [5d5ed0c6] Running /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh as pi@rasp
+ DEBUG [5d5ed0c6] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh
+  INFO [5d5ed0c6] Finished in 0.035 seconds with exit status 0 (successful).
+  INFO [8d01732b] Running /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git as pi@rasp
+ DEBUG [8d01732b] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git )
+ DEBUG [8d01732b] 	d81e3a3a73e5a60b417d20db987f78824208ede4	refs/heads/master
+  INFO [8d01732b] Finished in 0.524 seconds with exit status 0 (successful).
+  INFO [ec6b24bc] Running /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases as pi@rasp
+ DEBUG [ec6b24bc] Command: /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases
+  INFO [ec6b24bc] Finished in 0.024 seconds with exit status 0 (successful).
+ DEBUG [64f37711] Running [ -f /var/www/html/golf/current/REVISION ] as pi@rasp
+ DEBUG [64f37711] Command: [ -f /var/www/html/golf/current/REVISION ]
+ DEBUG [64f37711] Finished in 0.023 seconds with exit status 0 (successful).
+ DEBUG [c1a267a3] Running /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null as pi@rasp
+ DEBUG [c1a267a3] Command: /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null
+ DEBUG [c1a267a3] 	5f760f12653547272bb1cea37ae5e9478c50bab7
+ DEBUG [c1a267a3] Finished in 0.040 seconds with exit status 0 (successful).
+ DEBUG [6743aeef] Running [ -f /var/www/html/golf/repo/HEAD ] as pi@rasp
+ DEBUG [6743aeef] Command: [ -f /var/www/html/golf/repo/HEAD ]
+ DEBUG [6743aeef] Finished in 0.017 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/golf/repo
+ DEBUG [8610b9d5] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [8610b9d5] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [8610b9d5] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO [7ed234f2] Running /usr/bin/env git remote update --prune as pi@rasp
+ DEBUG [7ed234f2] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [7ed234f2] 	Fetching origin
+ DEBUG [7ed234f2] 	From https://github.com/ericwingate/golf
+   5f760f1..d81e3a3  master     -> master
+  INFO [7ed234f2] Finished in 0.997 seconds with exit status 0 (successful).
+ DEBUG [04d81c0b] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [04d81c0b] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [04d81c0b] Finished in 0.037 seconds with exit status 0 (successful).
+  INFO [9864dfd4] Running /usr/bin/env mkdir -p /var/www/html/golf/releases/20170104224314 as pi@rasp
+ DEBUG [9864dfd4] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env mkdir -p /var/www/html/golf/releases/20170104224314 )
+  INFO [9864dfd4] Finished in 0.026 seconds with exit status 0 (successful).
+  INFO [1652554c] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170104224314 as pi@rasp
+ DEBUG [1652554c] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170104224314 )
+  INFO [1652554c] Finished in 0.054 seconds with exit status 0 (successful).
+ DEBUG [cdd79c01] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [cdd79c01] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [cdd79c01] Finished in 0.018 seconds with exit status 0 (successful).
+ DEBUG [06b764d6] Running /usr/bin/env git rev-list --max-count=1 master as pi@rasp
+ DEBUG [06b764d6] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [06b764d6] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [06b764d6] Finished in 0.043 seconds with exit status 0 (successful).
+ DEBUG [31408469] Running if test ! -d /var/www/html/golf/releases/20170104224314; then echo "Directory does not exist '/var/www/html/golf/releases/20170104224314'" 1>&2; false; fi as pi@rasp
+ DEBUG [31408469] Command: if test ! -d /var/www/html/golf/releases/20170104224314; then echo "Directory does not exist '/var/www/html/golf/releases/20170104224314'" 1>&2; false; fi
+ DEBUG [31408469] Finished in 0.019 seconds with exit status 0 (successful).
+  INFO [49e12c04] Running /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION as pi@rasp
+ DEBUG [49e12c04] Command: cd /var/www/html/golf/releases/20170104224314 && /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION
+  INFO [49e12c04] Finished in 0.023 seconds with exit status 0 (successful).
+  INFO [55cc419f] Running /usr/bin/env ln -s /var/www/html/golf/releases/20170104224314 /var/www/html/golf/releases/current as pi@rasp
+ DEBUG [55cc419f] Command: /usr/bin/env ln -s /var/www/html/golf/releases/20170104224314 /var/www/html/golf/releases/current
+  INFO [55cc419f] Finished in 0.027 seconds with exit status 0 (successful).
+  INFO [b154c43d] Running /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf as pi@rasp
+ DEBUG [b154c43d] Command: /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf
+  INFO [b154c43d] Finished in 0.038 seconds with exit status 0 (successful).
+ DEBUG [b17d425d] Running /usr/bin/env ls -x /var/www/html/golf/releases as pi@rasp
+ DEBUG [b17d425d] Command: /usr/bin/env ls -x /var/www/html/golf/releases
+ DEBUG [b17d425d] 	20170104224209	20170104224314
+ DEBUG [b17d425d] Finished in 0.023 seconds with exit status 0 (successful).
+ DEBUG [f412d628] Running if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi as pi@rasp
+ DEBUG [f412d628] Command: if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi
+ DEBUG [f412d628] Finished in 0.021 seconds with exit status 0 (successful).
+  INFO [4efb33d8] Running /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170104224314 by ewingate" >> /var/www/html/golf/revisions.log as pi@rasp
+ DEBUG [4efb33d8] Command: cd /var/www/html/golf/releases && /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170104224314 by ewingate" >> /var/www/html/golf/revisions.log
+  INFO [4efb33d8] Finished in 0.028 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-04 16:57:32 -0600 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [1b800c79] Running /usr/bin/env mkdir -p /tmp as pi@rasp
+ DEBUG [1b800c79] Command: /usr/bin/env mkdir -p /tmp
+  INFO [1b800c79] Finished in 0.268 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Golf-production-ewingate.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Golf-production-ewingate.sh 100.0%
+  INFO [74246cf3] Running /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh as pi@rasp
+ DEBUG [74246cf3] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh
+  INFO [74246cf3] Finished in 0.037 seconds with exit status 0 (successful).
+  INFO [f8808043] Running /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git as pi@rasp
+ DEBUG [f8808043] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git )
+ DEBUG [f8808043] 	d81e3a3a73e5a60b417d20db987f78824208ede4	refs/heads/master
+  INFO [f8808043] Finished in 0.606 seconds with exit status 0 (successful).
+  INFO [0a438605] Running /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases as pi@rasp
+ DEBUG [0a438605] Command: /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases
+  INFO [0a438605] Finished in 0.024 seconds with exit status 0 (successful).
+ DEBUG [4addb57a] Running [ -f /var/www/html/golf/current/REVISION ] as pi@rasp
+ DEBUG [4addb57a] Command: [ -f /var/www/html/golf/current/REVISION ]
+ DEBUG [4addb57a] Finished in 0.023 seconds with exit status 0 (successful).
+ DEBUG [6f24b4eb] Running /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null as pi@rasp
+ DEBUG [6f24b4eb] Command: /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null
+ DEBUG [6f24b4eb] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [6f24b4eb] Finished in 0.043 seconds with exit status 0 (successful).
+ DEBUG [f3294ddd] Running [ -f /var/www/html/golf/repo/HEAD ] as pi@rasp
+ DEBUG [f3294ddd] Command: [ -f /var/www/html/golf/repo/HEAD ]
+ DEBUG [f3294ddd] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/golf/repo
+ DEBUG [7d074190] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [7d074190] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [7d074190] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO [6e20f1b2] Running /usr/bin/env git remote update --prune as pi@rasp
+ DEBUG [6e20f1b2] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [6e20f1b2] 	Fetching origin
+  INFO [6e20f1b2] Finished in 0.481 seconds with exit status 0 (successful).
+ DEBUG [8a001054] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [8a001054] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [8a001054] Finished in 0.038 seconds with exit status 0 (successful).
+  INFO [503e3048] Running /usr/bin/env mkdir -p /var/www/html/golf/releases/20170104225733 as pi@rasp
+ DEBUG [503e3048] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env mkdir -p /var/www/html/golf/releases/20170104225733 )
+  INFO [503e3048] Finished in 0.026 seconds with exit status 0 (successful).
+  INFO [05ec6c5f] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170104225733 as pi@rasp
+ DEBUG [05ec6c5f] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170104225733 )
+  INFO [05ec6c5f] Finished in 0.054 seconds with exit status 0 (successful).
+ DEBUG [0cff6277] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [0cff6277] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [0cff6277] Finished in 0.018 seconds with exit status 0 (successful).
+ DEBUG [19272347] Running /usr/bin/env git rev-list --max-count=1 master as pi@rasp
+ DEBUG [19272347] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [19272347] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [19272347] Finished in 0.044 seconds with exit status 0 (successful).
+ DEBUG [815e9bd0] Running if test ! -d /var/www/html/golf/releases/20170104225733; then echo "Directory does not exist '/var/www/html/golf/releases/20170104225733'" 1>&2; false; fi as pi@rasp
+ DEBUG [815e9bd0] Command: if test ! -d /var/www/html/golf/releases/20170104225733; then echo "Directory does not exist '/var/www/html/golf/releases/20170104225733'" 1>&2; false; fi
+ DEBUG [815e9bd0] Finished in 0.019 seconds with exit status 0 (successful).
+  INFO [4ef99836] Running /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION as pi@rasp
+ DEBUG [4ef99836] Command: cd /var/www/html/golf/releases/20170104225733 && /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION
+  INFO [4ef99836] Finished in 0.022 seconds with exit status 0 (successful).
+  INFO [e7a03388] Running /usr/bin/env ln -s /var/www/html/golf/releases/20170104225733 /var/www/html/golf/releases/current as pi@rasp
+ DEBUG [e7a03388] Command: /usr/bin/env ln -s /var/www/html/golf/releases/20170104225733 /var/www/html/golf/releases/current
+  INFO [e7a03388] Finished in 0.021 seconds with exit status 0 (successful).
+  INFO [03a3a1ff] Running /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf as pi@rasp
+ DEBUG [03a3a1ff] Command: /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf
+  INFO [03a3a1ff] Finished in 0.042 seconds with exit status 0 (successful).
+ DEBUG [245add08] Running /usr/bin/env ls -x /var/www/html/golf/releases as pi@rasp
+ DEBUG [245add08] Command: /usr/bin/env ls -x /var/www/html/golf/releases
+ DEBUG [245add08] 	20170104224209	20170104224314	20170104225733
+ DEBUG [245add08] Finished in 0.027 seconds with exit status 0 (successful).
+ DEBUG [b376fe3e] Running if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi as pi@rasp
+ DEBUG [b376fe3e] Command: if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi
+ DEBUG [b376fe3e] Finished in 0.023 seconds with exit status 0 (successful).
+  INFO [8f71bb77] Running /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170104225733 by ewingate" >> /var/www/html/golf/revisions.log as pi@rasp
+ DEBUG [8f71bb77] Command: cd /var/www/html/golf/releases && /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170104225733 by ewingate" >> /var/www/html/golf/revisions.log
+  INFO [8f71bb77] Finished in 0.023 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-04 17:00:00 -0600 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [e96b2a53] Running /usr/bin/env mkdir -p /tmp as pi@rasp
+ DEBUG [e96b2a53] Command: /usr/bin/env mkdir -p /tmp
+  INFO [e96b2a53] Finished in 0.281 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Golf-production-ewingate.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Golf-production-ewingate.sh 100.0%
+  INFO [f6ec08f2] Running /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh as pi@rasp
+ DEBUG [f6ec08f2] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh
+  INFO [f6ec08f2] Finished in 0.037 seconds with exit status 0 (successful).
+  INFO [1edc5610] Running /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git as pi@rasp
+ DEBUG [1edc5610] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git )
+ DEBUG [1edc5610] 	d81e3a3a73e5a60b417d20db987f78824208ede4	refs/heads/master
+  INFO [1edc5610] Finished in 0.612 seconds with exit status 0 (successful).
+  INFO [70fd399e] Running /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases as pi@rasp
+ DEBUG [70fd399e] Command: /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases
+  INFO [70fd399e] Finished in 0.025 seconds with exit status 0 (successful).
+ DEBUG [8e760807] Running [ -f /var/www/html/golf/current/REVISION ] as pi@rasp
+ DEBUG [8e760807] Command: [ -f /var/www/html/golf/current/REVISION ]
+ DEBUG [8e760807] Finished in 0.023 seconds with exit status 0 (successful).
+ DEBUG [e8dfee52] Running /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null as pi@rasp
+ DEBUG [e8dfee52] Command: /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null
+ DEBUG [e8dfee52] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [e8dfee52] Finished in 0.041 seconds with exit status 0 (successful).
+ DEBUG [a89c591d] Running [ -f /var/www/html/golf/repo/HEAD ] as pi@rasp
+ DEBUG [a89c591d] Command: [ -f /var/www/html/golf/repo/HEAD ]
+ DEBUG [a89c591d] Finished in 0.021 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/golf/repo
+ DEBUG [140d6a5c] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [140d6a5c] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [140d6a5c] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO [9e763325] Running /usr/bin/env git remote update --prune as pi@rasp
+ DEBUG [9e763325] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [9e763325] 	Fetching origin
+  INFO [9e763325] Finished in 0.609 seconds with exit status 0 (successful).
+ DEBUG [7615bb25] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [7615bb25] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [7615bb25] Finished in 0.033 seconds with exit status 0 (successful).
+  INFO [a77b6177] Running /usr/bin/env mkdir -p /var/www/html/golf/releases/20170104230001 as pi@rasp
+ DEBUG [a77b6177] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env mkdir -p /var/www/html/golf/releases/20170104230001 )
+  INFO [a77b6177] Finished in 0.027 seconds with exit status 0 (successful).
+  INFO [d16fa79b] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170104230001 as pi@rasp
+ DEBUG [d16fa79b] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170104230001 )
+  INFO [d16fa79b] Finished in 0.054 seconds with exit status 0 (successful).
+ DEBUG [d1fed5fb] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [d1fed5fb] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [d1fed5fb] Finished in 0.019 seconds with exit status 0 (successful).
+ DEBUG [3f52f33d] Running /usr/bin/env git rev-list --max-count=1 master as pi@rasp
+ DEBUG [3f52f33d] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [3f52f33d] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [3f52f33d] Finished in 0.044 seconds with exit status 0 (successful).
+ DEBUG [5780debc] Running if test ! -d /var/www/html/golf/releases/20170104230001; then echo "Directory does not exist '/var/www/html/golf/releases/20170104230001'" 1>&2; false; fi as pi@rasp
+ DEBUG [5780debc] Command: if test ! -d /var/www/html/golf/releases/20170104230001; then echo "Directory does not exist '/var/www/html/golf/releases/20170104230001'" 1>&2; false; fi
+ DEBUG [5780debc] Finished in 0.019 seconds with exit status 0 (successful).
+  INFO [a851de6e] Running /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION as pi@rasp
+ DEBUG [a851de6e] Command: cd /var/www/html/golf/releases/20170104230001 && /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION
+  INFO [a851de6e] Finished in 0.023 seconds with exit status 0 (successful).
+  INFO [e80f8866] Running /usr/bin/env ln -s /var/www/html/golf/releases/20170104230001 /var/www/html/golf/releases/current as pi@rasp
+ DEBUG [e80f8866] Command: /usr/bin/env ln -s /var/www/html/golf/releases/20170104230001 /var/www/html/golf/releases/current
+  INFO [e80f8866] Finished in 0.021 seconds with exit status 0 (successful).
+  INFO [fe41b2c7] Running /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf as pi@rasp
+ DEBUG [fe41b2c7] Command: /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf
+  INFO [fe41b2c7] Finished in 0.042 seconds with exit status 0 (successful).
+ DEBUG [e2546b3c] Running /usr/bin/env ls -x /var/www/html/golf/releases as pi@rasp
+ DEBUG [e2546b3c] Command: /usr/bin/env ls -x /var/www/html/golf/releases
+ DEBUG [e2546b3c] 	20170104224209	20170104224314	20170104225733	20170104230001
+ DEBUG [e2546b3c] Finished in 0.027 seconds with exit status 0 (successful).
+ DEBUG [ba0b2af2] Running if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi as pi@rasp
+ DEBUG [ba0b2af2] Command: if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi
+ DEBUG [ba0b2af2] Finished in 0.020 seconds with exit status 0 (successful).
+  INFO [5cc3cd4c] Running /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170104230001 by ewingate" >> /var/www/html/golf/revisions.log as pi@rasp
+ DEBUG [5cc3cd4c] Command: cd /var/www/html/golf/releases && /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170104230001 by ewingate" >> /var/www/html/golf/revisions.log
+  INFO [5cc3cd4c] Finished in 0.023 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-04 17:00:53 -0600 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [a4448987] Running /usr/bin/env mkdir -p /tmp as pi@rasp
+ DEBUG [a4448987] Command: /usr/bin/env mkdir -p /tmp
+  INFO [a4448987] Finished in 0.214 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Golf-production-ewingate.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Golf-production-ewingate.sh 100.0%
+  INFO [604d9261] Running /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh as pi@rasp
+ DEBUG [604d9261] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh
+  INFO [604d9261] Finished in 0.035 seconds with exit status 0 (successful).
+  INFO [4e84a81b] Running /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git as pi@rasp
+ DEBUG [4e84a81b] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git )
+ DEBUG [4e84a81b] 	d81e3a3a73e5a60b417d20db987f78824208ede4	refs/heads/master
+  INFO [4e84a81b] Finished in 0.567 seconds with exit status 0 (successful).
+  INFO [b5e02a30] Running /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases as pi@rasp
+ DEBUG [b5e02a30] Command: /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases
+  INFO [b5e02a30] Finished in 0.026 seconds with exit status 0 (successful).
+ DEBUG [cbe5e6c8] Running [ -f /var/www/html/golf/current/REVISION ] as pi@rasp
+ DEBUG [cbe5e6c8] Command: [ -f /var/www/html/golf/current/REVISION ]
+ DEBUG [cbe5e6c8] Finished in 0.023 seconds with exit status 0 (successful).
+ DEBUG [ca444478] Running /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null as pi@rasp
+ DEBUG [ca444478] Command: /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null
+ DEBUG [ca444478] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [ca444478] Finished in 0.040 seconds with exit status 0 (successful).
+ DEBUG [ee9fb45b] Running [ -f /var/www/html/golf/repo/HEAD ] as pi@rasp
+ DEBUG [ee9fb45b] Command: [ -f /var/www/html/golf/repo/HEAD ]
+ DEBUG [ee9fb45b] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/golf/repo
+ DEBUG [5e6f491c] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [5e6f491c] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [5e6f491c] Finished in 0.022 seconds with exit status 0 (successful).
+  INFO [d9d32584] Running /usr/bin/env git remote update --prune as pi@rasp
+ DEBUG [d9d32584] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [d9d32584] 	Fetching origin
+  INFO [d9d32584] Finished in 0.480 seconds with exit status 0 (successful).
+ DEBUG [26f97f62] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [26f97f62] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [26f97f62] Finished in 0.038 seconds with exit status 0 (successful).
+  INFO [ef523073] Running /usr/bin/env mkdir -p /var/www/html/golf/releases/20170104230054 as pi@rasp
+ DEBUG [ef523073] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env mkdir -p /var/www/html/golf/releases/20170104230054 )
+  INFO [ef523073] Finished in 0.026 seconds with exit status 0 (successful).
+  INFO [f1581b40] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170104230054 as pi@rasp
+ DEBUG [f1581b40] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170104230054 )
+  INFO [f1581b40] Finished in 0.053 seconds with exit status 0 (successful).
+ DEBUG [2709b900] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [2709b900] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [2709b900] Finished in 0.018 seconds with exit status 0 (successful).
+ DEBUG [41281a6e] Running /usr/bin/env git rev-list --max-count=1 master as pi@rasp
+ DEBUG [41281a6e] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [41281a6e] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [41281a6e] Finished in 0.044 seconds with exit status 0 (successful).
+ DEBUG [2bbc6528] Running if test ! -d /var/www/html/golf/releases/20170104230054; then echo "Directory does not exist '/var/www/html/golf/releases/20170104230054'" 1>&2; false; fi as pi@rasp
+ DEBUG [2bbc6528] Command: if test ! -d /var/www/html/golf/releases/20170104230054; then echo "Directory does not exist '/var/www/html/golf/releases/20170104230054'" 1>&2; false; fi
+ DEBUG [2bbc6528] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO [876bd9ec] Running /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION as pi@rasp
+ DEBUG [876bd9ec] Command: cd /var/www/html/golf/releases/20170104230054 && /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION
+  INFO [876bd9ec] Finished in 0.023 seconds with exit status 0 (successful).
+  INFO [8302c3ad] Running /usr/bin/env ln -s /var/www/html/golf/releases/20170104230054 /var/www/html/golf/releases/current as pi@rasp
+ DEBUG [8302c3ad] Command: /usr/bin/env ln -s /var/www/html/golf/releases/20170104230054 /var/www/html/golf/releases/current
+  INFO [8302c3ad] Finished in 0.021 seconds with exit status 0 (successful).
+  INFO [6f11cec6] Running /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf as pi@rasp
+ DEBUG [6f11cec6] Command: /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf
+  INFO [6f11cec6] Finished in 0.042 seconds with exit status 0 (successful).
+ DEBUG [2e905bce] Running /usr/bin/env ls -x /var/www/html/golf/releases as pi@rasp
+ DEBUG [2e905bce] Command: /usr/bin/env ls -x /var/www/html/golf/releases
+ DEBUG [2e905bce] 	20170104224209	20170104224314	20170104225733	20170104230001	20170104230054
+ DEBUG [2e905bce] Finished in 0.026 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 5 deployed releases on rasp
+  INFO No old releases (keeping newest 5) on rasp
+ DEBUG [ec229358] Running if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi as pi@rasp
+ DEBUG [ec229358] Command: if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi
+ DEBUG [ec229358] Finished in 0.023 seconds with exit status 0 (successful).
+  INFO [9ce4fe3c] Running /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170104230054 by ewingate" >> /var/www/html/golf/revisions.log as pi@rasp
+ DEBUG [9ce4fe3c] Command: cd /var/www/html/golf/releases && /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170104230054 by ewingate" >> /var/www/html/golf/revisions.log
+  INFO [9ce4fe3c] Finished in 0.024 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-04 17:03:42 -0600 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [63a7a755] Running /usr/bin/env mkdir -p /tmp as pi@rasp
+ DEBUG [63a7a755] Command: /usr/bin/env mkdir -p /tmp
+  INFO [63a7a755] Finished in 0.215 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Golf-production-ewingate.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Golf-production-ewingate.sh 100.0%
+  INFO [504ce8cd] Running /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh as pi@rasp
+ DEBUG [504ce8cd] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh
+  INFO [504ce8cd] Finished in 0.055 seconds with exit status 0 (successful).
+  INFO [f9abab7e] Running /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git as pi@rasp
+ DEBUG [f9abab7e] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git )
+ DEBUG [f9abab7e] 	d81e3a3a73e5a60b417d20db987f78824208ede4	refs/heads/master
+  INFO [f9abab7e] Finished in 0.587 seconds with exit status 0 (successful).
+  INFO [0baee49e] Running /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases as pi@rasp
+ DEBUG [0baee49e] Command: /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases
+  INFO [0baee49e] Finished in 0.024 seconds with exit status 0 (successful).
+ DEBUG [3e263fd4] Running [ -f /var/www/html/golf/current/REVISION ] as pi@rasp
+ DEBUG [3e263fd4] Command: [ -f /var/www/html/golf/current/REVISION ]
+ DEBUG [3e263fd4] Finished in 0.023 seconds with exit status 0 (successful).
+ DEBUG [bbdfda1e] Running /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null as pi@rasp
+ DEBUG [bbdfda1e] Command: /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null
+ DEBUG [bbdfda1e] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [bbdfda1e] Finished in 0.041 seconds with exit status 0 (successful).
+ DEBUG [6120e769] Running [ -f /var/www/html/golf/repo/HEAD ] as pi@rasp
+ DEBUG [6120e769] Command: [ -f /var/www/html/golf/repo/HEAD ]
+ DEBUG [6120e769] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/golf/repo
+ DEBUG [c1589ac4] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [c1589ac4] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [c1589ac4] Finished in 0.024 seconds with exit status 0 (successful).
+  INFO [812a8b8f] Running /usr/bin/env git remote update --prune as pi@rasp
+ DEBUG [812a8b8f] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [812a8b8f] 	Fetching origin
+  INFO [812a8b8f] Finished in 0.477 seconds with exit status 0 (successful).
+ DEBUG [65634cea] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [65634cea] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [65634cea] Finished in 0.039 seconds with exit status 0 (successful).
+  INFO [e6344b59] Running /usr/bin/env mkdir -p /var/www/html/golf/releases/20170104230343 as pi@rasp
+ DEBUG [e6344b59] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env mkdir -p /var/www/html/golf/releases/20170104230343 )
+  INFO [e6344b59] Finished in 0.026 seconds with exit status 0 (successful).
+  INFO [d56ccd7d] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170104230343 as pi@rasp
+ DEBUG [d56ccd7d] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170104230343 )
+  INFO [d56ccd7d] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [29edcbc1] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [29edcbc1] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [29edcbc1] Finished in 0.018 seconds with exit status 0 (successful).
+ DEBUG [9aafb4c1] Running /usr/bin/env git rev-list --max-count=1 master as pi@rasp
+ DEBUG [9aafb4c1] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [9aafb4c1] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [9aafb4c1] Finished in 0.044 seconds with exit status 0 (successful).
+ DEBUG [e86ffd27] Running if test ! -d /var/www/html/golf/releases/20170104230343; then echo "Directory does not exist '/var/www/html/golf/releases/20170104230343'" 1>&2; false; fi as pi@rasp
+ DEBUG [e86ffd27] Command: if test ! -d /var/www/html/golf/releases/20170104230343; then echo "Directory does not exist '/var/www/html/golf/releases/20170104230343'" 1>&2; false; fi
+ DEBUG [e86ffd27] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO [995d0b79] Running /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION as pi@rasp
+ DEBUG [995d0b79] Command: cd /var/www/html/golf/releases/20170104230343 && /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION
+  INFO [995d0b79] Finished in 0.023 seconds with exit status 0 (successful).
+  INFO [0074ecbe] Running /usr/bin/env ln -s /var/www/html/golf/releases/20170104230343 /var/www/html/golf/releases/current as pi@rasp
+ DEBUG [0074ecbe] Command: /usr/bin/env ln -s /var/www/html/golf/releases/20170104230343 /var/www/html/golf/releases/current
+  INFO [0074ecbe] Finished in 0.022 seconds with exit status 0 (successful).
+  INFO [abe2f3a5] Running /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf as pi@rasp
+ DEBUG [abe2f3a5] Command: /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf
+  INFO [abe2f3a5] Finished in 0.043 seconds with exit status 0 (successful).
+ DEBUG [24586f06] Running /usr/bin/env ls -x /var/www/html/golf/releases as pi@rasp
+ DEBUG [24586f06] Command: /usr/bin/env ls -x /var/www/html/golf/releases
+ DEBUG [24586f06] 	20170104224209	20170104224314	20170104225733	20170104230001	20170104230054
+20170104230343
+ DEBUG [24586f06] Finished in 0.026 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on rasp
+  INFO [2ce346b5] Running /usr/bin/env rm -rf /var/www/html/golf/releases/20170104224209 as pi@rasp
+ DEBUG [2ce346b5] Command: /usr/bin/env rm -rf /var/www/html/golf/releases/20170104224209
+  INFO [2ce346b5] Finished in 0.026 seconds with exit status 0 (successful).
+ DEBUG [08b5df45] Running if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi as pi@rasp
+ DEBUG [08b5df45] Command: if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi
+ DEBUG [08b5df45] Finished in 0.021 seconds with exit status 0 (successful).
+  INFO [de4dd863] Running /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170104230343 by ewingate" >> /var/www/html/golf/revisions.log as pi@rasp
+ DEBUG [de4dd863] Command: cd /var/www/html/golf/releases && /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170104230343 by ewingate" >> /var/www/html/golf/revisions.log
+  INFO [de4dd863] Finished in 0.042 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-04 17:04:36 -0600 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [7dc535bc] Running /usr/bin/env mkdir -p /tmp as pi@rasp
+ DEBUG [7dc535bc] Command: /usr/bin/env mkdir -p /tmp
+  INFO [7dc535bc] Finished in 0.215 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Golf-production-ewingate.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Golf-production-ewingate.sh 100.0%
+  INFO [41cad1da] Running /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh as pi@rasp
+ DEBUG [41cad1da] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh
+  INFO [41cad1da] Finished in 0.039 seconds with exit status 0 (successful).
+  INFO [373062b9] Running /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git as pi@rasp
+ DEBUG [373062b9] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git )
+ DEBUG [373062b9] 	d81e3a3a73e5a60b417d20db987f78824208ede4	refs/heads/master
+  INFO [373062b9] Finished in 0.495 seconds with exit status 0 (successful).
+  INFO [092ecaa1] Running /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases as pi@rasp
+ DEBUG [092ecaa1] Command: /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases
+  INFO [092ecaa1] Finished in 0.025 seconds with exit status 0 (successful).
+ DEBUG [c6c35fec] Running [ -f /var/www/html/golf/current/REVISION ] as pi@rasp
+ DEBUG [c6c35fec] Command: [ -f /var/www/html/golf/current/REVISION ]
+ DEBUG [c6c35fec] Finished in 0.023 seconds with exit status 0 (successful).
+ DEBUG [f5e4411a] Running /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null as pi@rasp
+ DEBUG [f5e4411a] Command: /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null
+ DEBUG [f5e4411a] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [f5e4411a] Finished in 0.040 seconds with exit status 0 (successful).
+ DEBUG [50f075b3] Running [ -f /var/www/html/golf/repo/HEAD ] as pi@rasp
+ DEBUG [50f075b3] Command: [ -f /var/www/html/golf/repo/HEAD ]
+ DEBUG [50f075b3] Finished in 0.020 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/golf/repo
+ DEBUG [8d64637a] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [8d64637a] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [8d64637a] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO [e44b027c] Running /usr/bin/env git remote update --prune as pi@rasp
+ DEBUG [e44b027c] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [e44b027c] 	Fetching origin
+  INFO [e44b027c] Finished in 0.402 seconds with exit status 0 (successful).
+ DEBUG [135afb17] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [135afb17] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [135afb17] Finished in 0.033 seconds with exit status 0 (successful).
+  INFO [60e461ad] Running /usr/bin/env mkdir -p /var/www/html/golf/releases/20170104230437 as pi@rasp
+ DEBUG [60e461ad] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env mkdir -p /var/www/html/golf/releases/20170104230437 )
+  INFO [60e461ad] Finished in 0.029 seconds with exit status 0 (successful).
+  INFO [070288aa] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170104230437 as pi@rasp
+ DEBUG [070288aa] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170104230437 )
+  INFO [070288aa] Finished in 0.050 seconds with exit status 0 (successful).
+ DEBUG [803291a0] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [803291a0] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [803291a0] Finished in 0.021 seconds with exit status 0 (successful).
+ DEBUG [788b5567] Running /usr/bin/env git rev-list --max-count=1 master as pi@rasp
+ DEBUG [788b5567] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [788b5567] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [788b5567] Finished in 0.044 seconds with exit status 0 (successful).
+ DEBUG [5a4cecb4] Running if test ! -d /var/www/html/golf/releases/20170104230437; then echo "Directory does not exist '/var/www/html/golf/releases/20170104230437'" 1>&2; false; fi as pi@rasp
+ DEBUG [5a4cecb4] Command: if test ! -d /var/www/html/golf/releases/20170104230437; then echo "Directory does not exist '/var/www/html/golf/releases/20170104230437'" 1>&2; false; fi
+ DEBUG [5a4cecb4] Finished in 0.020 seconds with exit status 0 (successful).
+  INFO [5936c9ff] Running /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION as pi@rasp
+ DEBUG [5936c9ff] Command: cd /var/www/html/golf/releases/20170104230437 && /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION
+  INFO [5936c9ff] Finished in 0.022 seconds with exit status 0 (successful).
+  INFO [8fe466b4] Running /usr/bin/env ln -s /var/www/html/golf/releases/20170104230437 /var/www/html/golf/releases/current as pi@rasp
+ DEBUG [8fe466b4] Command: /usr/bin/env ln -s /var/www/html/golf/releases/20170104230437 /var/www/html/golf/releases/current
+  INFO [8fe466b4] Finished in 0.021 seconds with exit status 0 (successful).
+  INFO [8a857317] Running /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf as pi@rasp
+ DEBUG [8a857317] Command: /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf
+  INFO [8a857317] Finished in 0.041 seconds with exit status 0 (successful).
+ DEBUG [77d27d5a] Running /usr/bin/env ls -x /var/www/html/golf/releases as pi@rasp
+ DEBUG [77d27d5a] Command: /usr/bin/env ls -x /var/www/html/golf/releases
+ DEBUG [77d27d5a] 	20170104224314	20170104225733	20170104230001	20170104230054	20170104230343
+20170104230437
+ DEBUG [77d27d5a] Finished in 0.023 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on rasp
+  INFO [7b156469] Running /usr/bin/env rm -rf /var/www/html/golf/releases/20170104224314 as pi@rasp
+ DEBUG [7b156469] Command: /usr/bin/env rm -rf /var/www/html/golf/releases/20170104224314
+  INFO [7b156469] Finished in 0.600 seconds with exit status 0 (successful).
+ DEBUG [9c48b492] Running if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi as pi@rasp
+ DEBUG [9c48b492] Command: if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi
+ DEBUG [9c48b492] Finished in 0.021 seconds with exit status 0 (successful).
+  INFO [7cefdccb] Running /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170104230437 by ewingate" >> /var/www/html/golf/revisions.log as pi@rasp
+ DEBUG [7cefdccb] Command: cd /var/www/html/golf/releases && /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170104230437 by ewingate" >> /var/www/html/golf/revisions.log
+  INFO [7cefdccb] Finished in 0.042 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-04 17:05:53 -0600 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [4202ecf0] Running /usr/bin/env mkdir -p /tmp as pi@rasp
+ DEBUG [4202ecf0] Command: /usr/bin/env mkdir -p /tmp
+  INFO [4202ecf0] Finished in 0.286 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Golf-production-ewingate.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Golf-production-ewingate.sh 100.0%
+  INFO [ec9a1e56] Running /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh as pi@rasp
+ DEBUG [ec9a1e56] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh
+  INFO [ec9a1e56] Finished in 0.035 seconds with exit status 0 (successful).
+  INFO [f405f6c8] Running /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git as pi@rasp
+ DEBUG [f405f6c8] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git )
+ DEBUG [f405f6c8] 	d81e3a3a73e5a60b417d20db987f78824208ede4	refs/heads/master
+  INFO [f405f6c8] Finished in 0.504 seconds with exit status 0 (successful).
+  INFO [09213b08] Running /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases as pi@rasp
+ DEBUG [09213b08] Command: /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases
+  INFO [09213b08] Finished in 0.022 seconds with exit status 0 (successful).
+ DEBUG [ac73fefd] Running [ -f /var/www/html/golf/current/REVISION ] as pi@rasp
+ DEBUG [ac73fefd] Command: [ -f /var/www/html/golf/current/REVISION ]
+ DEBUG [ac73fefd] Finished in 0.022 seconds with exit status 0 (successful).
+ DEBUG [003aa73f] Running /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null as pi@rasp
+ DEBUG [003aa73f] Command: /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null
+ DEBUG [003aa73f] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [003aa73f] Finished in 0.040 seconds with exit status 0 (successful).
+ DEBUG [f1647b2d] Running [ -f /var/www/html/golf/repo/HEAD ] as pi@rasp
+ DEBUG [f1647b2d] Command: [ -f /var/www/html/golf/repo/HEAD ]
+ DEBUG [f1647b2d] Finished in 0.342 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/golf/repo
+ DEBUG [362f2c53] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [362f2c53] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [362f2c53] Finished in 0.019 seconds with exit status 0 (successful).
+  INFO [d25a1cca] Running /usr/bin/env git remote update --prune as pi@rasp
+ DEBUG [d25a1cca] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [d25a1cca] 	Fetching origin
+  INFO [d25a1cca] Finished in 0.401 seconds with exit status 0 (successful).
+ DEBUG [7a904c28] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [7a904c28] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [7a904c28] Finished in 0.032 seconds with exit status 0 (successful).
+  INFO [68add264] Running /usr/bin/env mkdir -p /var/www/html/golf/releases/20170104230554 as pi@rasp
+ DEBUG [68add264] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env mkdir -p /var/www/html/golf/releases/20170104230554 )
+  INFO [68add264] Finished in 0.031 seconds with exit status 0 (successful).
+  INFO [a58e5fa7] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170104230554 as pi@rasp
+ DEBUG [a58e5fa7] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170104230554 )
+  INFO [a58e5fa7] Finished in 0.054 seconds with exit status 0 (successful).
+ DEBUG [b69cc6b2] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [b69cc6b2] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [b69cc6b2] Finished in 0.018 seconds with exit status 0 (successful).
+ DEBUG [7e298694] Running /usr/bin/env git rev-list --max-count=1 master as pi@rasp
+ DEBUG [7e298694] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [7e298694] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [7e298694] Finished in 0.044 seconds with exit status 0 (successful).
+ DEBUG [34035c58] Running if test ! -d /var/www/html/golf/releases/20170104230554; then echo "Directory does not exist '/var/www/html/golf/releases/20170104230554'" 1>&2; false; fi as pi@rasp
+ DEBUG [34035c58] Command: if test ! -d /var/www/html/golf/releases/20170104230554; then echo "Directory does not exist '/var/www/html/golf/releases/20170104230554'" 1>&2; false; fi
+ DEBUG [34035c58] Finished in 0.017 seconds with exit status 0 (successful).
+  INFO [348c69d8] Running /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION as pi@rasp
+ DEBUG [348c69d8] Command: cd /var/www/html/golf/releases/20170104230554 && /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION
+  INFO [348c69d8] Finished in 0.025 seconds with exit status 0 (successful).
+  INFO [b1287628] Running /usr/bin/env ln -s /var/www/html/golf/releases/20170104230554 /var/www/html/golf/releases/current as pi@rasp
+ DEBUG [b1287628] Command: /usr/bin/env ln -s /var/www/html/golf/releases/20170104230554 /var/www/html/golf/releases/current
+  INFO [b1287628] Finished in 0.024 seconds with exit status 0 (successful).
+  INFO [240fbff6] Running /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf as pi@rasp
+ DEBUG [240fbff6] Command: /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf
+  INFO [240fbff6] Finished in 0.041 seconds with exit status 0 (successful).
+ DEBUG [11961c4c] Running /usr/bin/env ls -x /var/www/html/golf/releases as pi@rasp
+ DEBUG [11961c4c] Command: /usr/bin/env ls -x /var/www/html/golf/releases
+ DEBUG [11961c4c] 	20170104225733	20170104230001	20170104230054	20170104230343	20170104230437
+20170104230554
+ DEBUG [11961c4c] Finished in 0.027 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on rasp
+  INFO [c962bbed] Running /usr/bin/env rm -rf /var/www/html/golf/releases/20170104225733 as pi@rasp
+ DEBUG [c962bbed] Command: /usr/bin/env rm -rf /var/www/html/golf/releases/20170104225733
+  INFO [c962bbed] Finished in 0.033 seconds with exit status 0 (successful).
+ DEBUG [4d7b8b38] Running if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi as pi@rasp
+ DEBUG [4d7b8b38] Command: if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi
+ DEBUG [4d7b8b38] Finished in 0.023 seconds with exit status 0 (successful).
+  INFO [00cdfedc] Running /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170104230554 by ewingate" >> /var/www/html/golf/revisions.log as pi@rasp
+ DEBUG [00cdfedc] Command: cd /var/www/html/golf/releases && /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170104230554 by ewingate" >> /var/www/html/golf/revisions.log
+  INFO [00cdfedc] Finished in 0.040 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-04 17:07:44 -0600 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [b5f2e25a] Running /usr/bin/env mkdir -p /tmp as pi@rasp
+ DEBUG [b5f2e25a] Command: /usr/bin/env mkdir -p /tmp
+  INFO [b5f2e25a] Finished in 0.278 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Golf-production-ewingate.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Golf-production-ewingate.sh 100.0%
+  INFO [728442f6] Running /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh as pi@rasp
+ DEBUG [728442f6] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh
+  INFO [728442f6] Finished in 0.040 seconds with exit status 0 (successful).
+  INFO [fd7b430c] Running /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git as pi@rasp
+ DEBUG [fd7b430c] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git )
+ DEBUG [fd7b430c] 	d81e3a3a73e5a60b417d20db987f78824208ede4	refs/heads/master
+  INFO [fd7b430c] Finished in 0.588 seconds with exit status 0 (successful).
+  INFO [2d7f4df9] Running /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases as pi@rasp
+ DEBUG [2d7f4df9] Command: /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases
+  INFO [2d7f4df9] Finished in 0.025 seconds with exit status 0 (successful).
+ DEBUG [cb28057d] Running [ -f /var/www/html/golf/current/REVISION ] as pi@rasp
+ DEBUG [cb28057d] Command: [ -f /var/www/html/golf/current/REVISION ]
+ DEBUG [cb28057d] Finished in 0.022 seconds with exit status 0 (successful).
+ DEBUG [d31cfd45] Running /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null as pi@rasp
+ DEBUG [d31cfd45] Command: /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null
+ DEBUG [d31cfd45] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [d31cfd45] Finished in 0.040 seconds with exit status 0 (successful).
+ DEBUG [25a224d4] Running [ -f /var/www/html/golf/repo/HEAD ] as pi@rasp
+ DEBUG [25a224d4] Command: [ -f /var/www/html/golf/repo/HEAD ]
+ DEBUG [25a224d4] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/golf/repo
+ DEBUG [83a4bd99] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [83a4bd99] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [83a4bd99] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO [85fa0f8e] Running /usr/bin/env git remote update --prune as pi@rasp
+ DEBUG [85fa0f8e] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [85fa0f8e] 	Fetching origin
+  INFO [85fa0f8e] Finished in 0.484 seconds with exit status 0 (successful).
+ DEBUG [40794c69] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [40794c69] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [40794c69] Finished in 0.038 seconds with exit status 0 (successful).
+  INFO [e447f6c0] Running /usr/bin/env mkdir -p /var/www/html/golf/releases/20170104230745 as pi@rasp
+ DEBUG [e447f6c0] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env mkdir -p /var/www/html/golf/releases/20170104230745 )
+  INFO [e447f6c0] Finished in 0.026 seconds with exit status 0 (successful).
+  INFO [e0c4602a] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170104230745 as pi@rasp
+ DEBUG [e0c4602a] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170104230745 )
+  INFO [e0c4602a] Finished in 0.053 seconds with exit status 0 (successful).
+ DEBUG [6ae301f7] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [6ae301f7] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [6ae301f7] Finished in 0.021 seconds with exit status 0 (successful).
+ DEBUG [262da184] Running /usr/bin/env git rev-list --max-count=1 master as pi@rasp
+ DEBUG [262da184] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [262da184] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [262da184] Finished in 0.044 seconds with exit status 0 (successful).
+ DEBUG [6c13df23] Running if test ! -d /var/www/html/golf/releases/20170104230745; then echo "Directory does not exist '/var/www/html/golf/releases/20170104230745'" 1>&2; false; fi as pi@rasp
+ DEBUG [6c13df23] Command: if test ! -d /var/www/html/golf/releases/20170104230745; then echo "Directory does not exist '/var/www/html/golf/releases/20170104230745'" 1>&2; false; fi
+ DEBUG [6c13df23] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO [2c37d115] Running /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION as pi@rasp
+ DEBUG [2c37d115] Command: cd /var/www/html/golf/releases/20170104230745 && /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION
+  INFO [2c37d115] Finished in 0.022 seconds with exit status 0 (successful).
+  INFO [66b7c2b2] Running /usr/bin/env ln -s /var/www/html/golf/releases/20170104230745 /var/www/html/golf/releases/current as pi@rasp
+ DEBUG [66b7c2b2] Command: /usr/bin/env ln -s /var/www/html/golf/releases/20170104230745 /var/www/html/golf/releases/current
+  INFO [66b7c2b2] Finished in 0.021 seconds with exit status 0 (successful).
+  INFO [c0be6138] Running /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf as pi@rasp
+ DEBUG [c0be6138] Command: /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf
+  INFO [c0be6138] Finished in 0.043 seconds with exit status 0 (successful).
+ DEBUG [1d0a849a] Running /usr/bin/env ls -x /var/www/html/golf/releases as pi@rasp
+ DEBUG [1d0a849a] Command: /usr/bin/env ls -x /var/www/html/golf/releases
+ DEBUG [1d0a849a] 	20170104230001	20170104230054	20170104230343	20170104230437	20170104230554
+20170104230745
+ DEBUG [1d0a849a] Finished in 0.025 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on rasp
+  INFO [c5c89ed2] Running /usr/bin/env rm -rf /var/www/html/golf/releases/20170104230001 as pi@rasp
+ DEBUG [c5c89ed2] Command: /usr/bin/env rm -rf /var/www/html/golf/releases/20170104230001
+  INFO [c5c89ed2] Finished in 0.036 seconds with exit status 0 (successful).
+ DEBUG [cd88129c] Running if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi as pi@rasp
+ DEBUG [cd88129c] Command: if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi
+ DEBUG [cd88129c] Finished in 0.023 seconds with exit status 0 (successful).
+  INFO [70d1eed7] Running /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170104230745 by ewingate" >> /var/www/html/golf/revisions.log as pi@rasp
+ DEBUG [70d1eed7] Command: cd /var/www/html/golf/releases && /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170104230745 by ewingate" >> /var/www/html/golf/revisions.log
+  INFO [70d1eed7] Finished in 0.041 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-04 17:09:41 -0600 cap production deploy:example
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-04 17:10:20 -0600 cap production deploy:example
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-04 17:11:08 -0600 cap production deploy:cleanup
+  INFO ---------------------------------------------------------------------------
+ DEBUG [dda85537] Running /usr/bin/env ls -x /var/www/html/golf/releases as pi@rasp
+ DEBUG [dda85537] Command: /usr/bin/env ls -x /var/www/html/golf/releases
+ DEBUG [dda85537] 	20170104230054	20170104230343	20170104230437	20170104230554	20170104230745
+ DEBUG [dda85537] Finished in 0.223 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 5 deployed releases on rasp
+  INFO No old releases (keeping newest 5) on rasp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-04 17:11:19 -0600 cap production deploy:check
+  INFO ---------------------------------------------------------------------------
+  INFO [28ef612e] Running /usr/bin/env mkdir -p /tmp as pi@rasp
+ DEBUG [28ef612e] Command: /usr/bin/env mkdir -p /tmp
+  INFO [28ef612e] Finished in 0.214 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Golf-production-ewingate.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Golf-production-ewingate.sh 100.0%
+  INFO [c3066b97] Running /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh as pi@rasp
+ DEBUG [c3066b97] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh
+  INFO [c3066b97] Finished in 0.035 seconds with exit status 0 (successful).
+  INFO [1015ddfe] Running /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git as pi@rasp
+ DEBUG [1015ddfe] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git )
+ DEBUG [1015ddfe] 	d81e3a3a73e5a60b417d20db987f78824208ede4	refs/heads/master
+  INFO [1015ddfe] Finished in 0.552 seconds with exit status 0 (successful).
+  INFO [6f45f3bc] Running /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases as pi@rasp
+ DEBUG [6f45f3bc] Command: /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases
+  INFO [6f45f3bc] Finished in 0.025 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-04 17:14:42 -0600 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [123b3b28] Running /usr/bin/env mkdir -p /tmp as pi@rasp
+ DEBUG [123b3b28] Command: /usr/bin/env mkdir -p /tmp
+  INFO [123b3b28] Finished in 0.323 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Golf-production-ewingate.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Golf-production-ewingate.sh 100.0%
+  INFO [d3d286d0] Running /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh as pi@rasp
+ DEBUG [d3d286d0] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh
+  INFO [d3d286d0] Finished in 0.036 seconds with exit status 0 (successful).
+  INFO [246c7429] Running /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git as pi@rasp
+ DEBUG [246c7429] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git )
+ DEBUG [246c7429] 	d81e3a3a73e5a60b417d20db987f78824208ede4	refs/heads/master
+  INFO [246c7429] Finished in 0.577 seconds with exit status 0 (successful).
+  INFO [b4783c78] Running /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases as pi@rasp
+ DEBUG [b4783c78] Command: /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases
+  INFO [b4783c78] Finished in 0.026 seconds with exit status 0 (successful).
+ DEBUG [d44c6f5c] Running [ -f /var/www/html/golf/current/REVISION ] as pi@rasp
+ DEBUG [d44c6f5c] Command: [ -f /var/www/html/golf/current/REVISION ]
+ DEBUG [d44c6f5c] Finished in 0.023 seconds with exit status 0 (successful).
+ DEBUG [6784ab0e] Running /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null as pi@rasp
+ DEBUG [6784ab0e] Command: /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null
+ DEBUG [6784ab0e] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [6784ab0e] Finished in 0.040 seconds with exit status 0 (successful).
+ DEBUG [bc017e12] Running [ -f /var/www/html/golf/repo/HEAD ] as pi@rasp
+ DEBUG [bc017e12] Command: [ -f /var/www/html/golf/repo/HEAD ]
+ DEBUG [bc017e12] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/golf/repo
+ DEBUG [7fe9d6bc] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [7fe9d6bc] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [7fe9d6bc] Finished in 0.019 seconds with exit status 0 (successful).
+  INFO [6541aa1c] Running /usr/bin/env git remote update --prune as pi@rasp
+ DEBUG [6541aa1c] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [6541aa1c] 	Fetching origin
+  INFO [6541aa1c] Finished in 0.483 seconds with exit status 0 (successful).
+ DEBUG [f3f2e836] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [f3f2e836] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [f3f2e836] Finished in 0.038 seconds with exit status 0 (successful).
+  INFO [9d4e332d] Running /usr/bin/env mkdir -p /var/www/html/golf/releases/20170104231443 as pi@rasp
+ DEBUG [9d4e332d] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env mkdir -p /var/www/html/golf/releases/20170104231443 )
+  INFO [9d4e332d] Finished in 0.026 seconds with exit status 0 (successful).
+  INFO [537dc0b7] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170104231443 as pi@rasp
+ DEBUG [537dc0b7] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170104231443 )
+  INFO [537dc0b7] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [cfd37f0f] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [cfd37f0f] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [cfd37f0f] Finished in 0.018 seconds with exit status 0 (successful).
+ DEBUG [59cd7255] Running /usr/bin/env git rev-list --max-count=1 master as pi@rasp
+ DEBUG [59cd7255] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [59cd7255] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [59cd7255] Finished in 0.044 seconds with exit status 0 (successful).
+ DEBUG [22f2c0c6] Running if test ! -d /var/www/html/golf/releases/20170104231443; then echo "Directory does not exist '/var/www/html/golf/releases/20170104231443'" 1>&2; false; fi as pi@rasp
+ DEBUG [22f2c0c6] Command: if test ! -d /var/www/html/golf/releases/20170104231443; then echo "Directory does not exist '/var/www/html/golf/releases/20170104231443'" 1>&2; false; fi
+ DEBUG [22f2c0c6] Finished in 0.019 seconds with exit status 0 (successful).
+  INFO [ac5c5ad6] Running /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION as pi@rasp
+ DEBUG [ac5c5ad6] Command: cd /var/www/html/golf/releases/20170104231443 && /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION
+  INFO [ac5c5ad6] Finished in 0.025 seconds with exit status 0 (successful).
+  INFO [3be23c83] Running /usr/bin/env ln -s /var/www/html/golf/releases/20170104231443 /var/www/html/golf/releases/current as pi@rasp
+ DEBUG [3be23c83] Command: /usr/bin/env ln -s /var/www/html/golf/releases/20170104231443 /var/www/html/golf/releases/current
+  INFO [3be23c83] Finished in 0.027 seconds with exit status 0 (successful).
+  INFO [d9337569] Running /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf as pi@rasp
+ DEBUG [d9337569] Command: /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf
+  INFO [d9337569] Finished in 0.040 seconds with exit status 0 (successful).
+ DEBUG [b4a0355f] Running /usr/bin/env ls -x /var/www/html/golf/releases as pi@rasp
+ DEBUG [b4a0355f] Command: /usr/bin/env ls -x /var/www/html/golf/releases
+ DEBUG [b4a0355f] 	20170104230054	20170104230343	20170104230437	20170104230554	20170104230745
+20170104231443
+ DEBUG [b4a0355f] Finished in 0.029 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on rasp
+  INFO [a1d8b61b] Running /usr/bin/env rm -rf /var/www/html/golf/releases/20170104230054 as pi@rasp
+ DEBUG [a1d8b61b] Command: /usr/bin/env rm -rf /var/www/html/golf/releases/20170104230054
+  INFO [a1d8b61b] Finished in 0.031 seconds with exit status 0 (successful).
+ DEBUG [ddaf254d] Running if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi as pi@rasp
+ DEBUG [ddaf254d] Command: if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi
+ DEBUG [ddaf254d] Finished in 0.023 seconds with exit status 0 (successful).
+  INFO [284e2b6f] Running /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170104231443 by ewingate" >> /var/www/html/golf/revisions.log as pi@rasp
+ DEBUG [284e2b6f] Command: cd /var/www/html/golf/releases && /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170104231443 by ewingate" >> /var/www/html/golf/revisions.log
+  INFO [284e2b6f] Finished in 0.045 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-04 17:17:15 -0600 cap production composer:install
+  INFO ---------------------------------------------------------------------------
+ DEBUG [b03e064b] Running if test ! -d; then echo "Directory does not exist ''" 1>&2; false; fi as pi@rasp
+ DEBUG [b03e064b] Command: if test ! -d; then echo "Directory does not exist ''" 1>&2; false; fi
+ DEBUG [b03e064b] Finished in 0.217 seconds with exit status 0 (successful).
+  INFO [4f59ba95] Running /usr/bin/env composer install --no-dev --prefer-dist --no-interaction --quiet --optimize-autoloader as pi@rasp
+ DEBUG [4f59ba95] Command: cd  && /usr/bin/env composer install --no-dev --prefer-dist --no-interaction --quiet --optimize-autoloader
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-04 17:17:46 -0600 cap production composer:run
+  INFO ---------------------------------------------------------------------------
+ DEBUG [0f5a88a7] Running if test ! -d; then echo "Directory does not exist ''" 1>&2; false; fi as pi@rasp
+ DEBUG [0f5a88a7] Command: if test ! -d; then echo "Directory does not exist ''" 1>&2; false; fi
+ DEBUG [0f5a88a7] Finished in 0.219 seconds with exit status 0 (successful).
+  INFO [047f15f5] Running /usr/bin/env composer list as pi@rasp
+ DEBUG [047f15f5] Command: cd  && /usr/bin/env composer list
+ DEBUG [047f15f5] 	   ______
+  / ____/___  ____ ___  ____  ____  ________  _____
+ / /   / __ \/ __ `__ \/ __ \/ __ \/ ___/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ (__  )  __/ /
+\____/\____/_/ /_/ /_/ .___/\____/____/\___/_/
+                    /_/
+Composer version 1.3.0 2016-12-24 00:47:03
+
+ DEBUG [047f15f5] 	Usage:
+  command [options] [arguments]
+
+ DEBUG [047f15f5] 	Options:
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  -h, --help                     Display this help message
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  -q, --quiet                    Do not output any message
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  -V, --version                  Display this application version
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	      --ansi                     Force ANSI output
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	      --no-ansi                  Disable ANSI output
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  -n, --no-interaction           Do not ask any interactive question
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	      --profile                  Display timing and memory usage information
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	      --no-plugins               Whether to disable plugins.
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  -d, --working-dir=WORKING-DIR  If specified, use the given directory as working directory.
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  -v|vv|vvv, --verbose           Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	Available commands:
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  about           Short information about Composer
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  archive         Create an archive of this composer package
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  browse          Opens the package's repository URL or homepage in your browser.
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  clear-cache     Clears composer's internal package cache.
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  clearcache      Clears composer's internal package cache.
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  config          Set config options
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  create-project  Create new project from a package into given directory.
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  depends         Shows which packages cause the given package to be installed
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  diagnose        Diagnoses the system to identify common errors.
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  dump-autoload   Dumps the autoloader
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  dumpautoload    Dumps the autoloader
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  exec            Execute a vendored binary/script
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  global          Allows running commands in the global composer dir ($COMPOSER_HOME).
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  help            Displays help for a command
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  home            Opens the package's repository URL or homepage in your browser.
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  info            Show information about packages
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  init            Creates a basic composer.json file in current directory.
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  install         Installs the project dependencies from the composer.lock file if present, or falls back on the composer.json.
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  licenses        Show information about licenses of dependencies
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  list            Lists commands
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  outdated        Shows a list of installed packages that have updates available, including their latest version.
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  prohibits       Shows which packages prevent the given package from being installed
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  remove          Removes a package from the require or require-dev
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  require         Adds required packages to your composer.json and installs them
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  run-script      Run the scripts defined in composer.json.
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  search          Search for packages
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  self-update     Updates composer.phar to the latest version.
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  selfupdate      Updates composer.phar to the latest version.
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  show            Show information about packages
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  status          Show a list of locally modified packages
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  suggests        Show package suggestions
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  update          Updates your dependencies to the latest version according to composer.json, and updates the composer.lock file.
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  validate        Validates a composer.json and composer.lock
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  why             Shows which packages cause the given package to be installed
+ DEBUG [047f15f5] 	
+ DEBUG [047f15f5] 	  why-not         Shows which packages prevent the given package from being installed
+ DEBUG [047f15f5] 	
+  INFO [047f15f5] Finished in 0.783 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-04 17:18:00 -0600 cap production composer:install
+  INFO ---------------------------------------------------------------------------
+ DEBUG [49f3ddab] Running if test ! -d; then echo "Directory does not exist ''" 1>&2; false; fi as pi@rasp
+ DEBUG [49f3ddab] Command: if test ! -d; then echo "Directory does not exist ''" 1>&2; false; fi
+ DEBUG [49f3ddab] Finished in 0.232 seconds with exit status 0 (successful).
+  INFO [9316a600] Running /usr/bin/env composer install --no-dev --prefer-dist --no-interaction --quiet --optimize-autoloader as pi@rasp
+ DEBUG [9316a600] Command: cd  && /usr/bin/env composer install --no-dev --prefer-dist --no-interaction --quiet --optimize-autoloader
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-04 17:18:43 -0600 cap production composer:run
+  INFO ---------------------------------------------------------------------------
+ DEBUG [8e9b889c] Running if test ! -d; then echo "Directory does not exist ''" 1>&2; false; fi as pi@rasp
+ DEBUG [8e9b889c] Command: if test ! -d; then echo "Directory does not exist ''" 1>&2; false; fi
+ DEBUG [8e9b889c] Finished in 0.214 seconds with exit status 0 (successful).
+  INFO [d5dfced6] Running /usr/bin/env composer list as pi@rasp
+ DEBUG [d5dfced6] Command: cd  && /usr/bin/env composer list
+ DEBUG [d5dfced6] 	   ______
+  / ____/___  ____ ___  ____  ____  ________  _____
+ / /   / __ \/ __ `__ \/ __ \/ __ \/ ___/ _ \/ ___/
+/ /___/ /_/ / / / / / / /_/ / /_/ (__  )  __/ /
+\____/\____/_/ /_/ /_/ .___/\____/____/\___/_/
+                    /_/
+Composer version 1.3.0 2016-12-24 00:47:03
+
+ DEBUG [d5dfced6] 	Usage:
+ DEBUG [d5dfced6] 	  command [options] [arguments]
+
+ DEBUG [d5dfced6] 	Options:
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  -h, --help                     Display this help message
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  -q, --quiet                    Do not output any message
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  -V, --version                  Display this application version
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	      --ansi                     Force ANSI output
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	      --no-ansi                  Disable ANSI output
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  -n, --no-interaction           Do not ask any interactive question
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	      --profile                  Display timing and memory usage information
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	      --no-plugins               Whether to disable plugins.
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  -d, --working-dir=WORKING-DIR  If specified, use the given directory as working directory.
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  -v|vv|vvv, --verbose           Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	Available commands:
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  about           Short information about Composer
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  archive         Create an archive of this composer package
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  browse          Opens the package's repository URL or homepage in your browser.
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  clear-cache     Clears composer's internal package cache.
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  clearcache      Clears composer's internal package cache.
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  config          Set config options
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  create-project  Create new project from a package into given directory.
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  depends         Shows which packages cause the given package to be installed
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  diagnose        Diagnoses the system to identify common errors.
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  dump-autoload   Dumps the autoloader
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  dumpautoload    Dumps the autoloader
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  exec            Execute a vendored binary/script
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  global          Allows running commands in the global composer dir ($COMPOSER_HOME).
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  help            Displays help for a command
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  home            Opens the package's repository URL or homepage in your browser.
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  info            Show information about packages
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  init            Creates a basic composer.json file in current directory.
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  install         Installs the project dependencies from the composer.lock file if present, or falls back on the composer.json.
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  licenses        Show information about licenses of dependencies
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  list            Lists commands
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  outdated        Shows a list of installed packages that have updates available, including their latest version.
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  prohibits       Shows which packages prevent the given package from being installed
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  remove          Removes a package from the require or require-dev
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  require         Adds required packages to your composer.json and installs them
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  run-script      Run the scripts defined in composer.json.
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  search          Search for packages
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  self-update     Updates composer.phar to the latest version.
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  selfupdate      Updates composer.phar to the latest version.
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  show            Show information about packages
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  status          Show a list of locally modified packages
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  suggests        Show package suggestions
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  update          Updates your dependencies to the latest version according to composer.json, and updates the composer.lock file.
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  validate        Validates a composer.json and composer.lock
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  why             Shows which packages cause the given package to be installed
+ DEBUG [d5dfced6] 	
+ DEBUG [d5dfced6] 	  why-not         Shows which packages prevent the given package from being installed
+ DEBUG [d5dfced6] 	
+  INFO [d5dfced6] Finished in 0.827 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-04 17:19:11 -0600 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [e2a34f30] Running /usr/bin/env mkdir -p /tmp as pi@rasp
+ DEBUG [e2a34f30] Command: /usr/bin/env mkdir -p /tmp
+  INFO [e2a34f30] Finished in 0.297 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Golf-production-ewingate.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Golf-production-ewingate.sh 100.0%
+  INFO [95fb9c7a] Running /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh as pi@rasp
+ DEBUG [95fb9c7a] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh
+  INFO [95fb9c7a] Finished in 0.037 seconds with exit status 0 (successful).
+  INFO [7b88c25b] Running /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git as pi@rasp
+ DEBUG [7b88c25b] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git )
+ DEBUG [7b88c25b] 	d81e3a3a73e5a60b417d20db987f78824208ede4	refs/heads/master
+  INFO [7b88c25b] Finished in 0.534 seconds with exit status 0 (successful).
+  INFO [0f14b569] Running /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases as pi@rasp
+ DEBUG [0f14b569] Command: /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases
+  INFO [0f14b569] Finished in 0.026 seconds with exit status 0 (successful).
+ DEBUG [015dc6ae] Running [ -f /var/www/html/golf/current/REVISION ] as pi@rasp
+ DEBUG [015dc6ae] Command: [ -f /var/www/html/golf/current/REVISION ]
+ DEBUG [015dc6ae] Finished in 0.021 seconds with exit status 0 (successful).
+ DEBUG [723fa7e0] Running /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null as pi@rasp
+ DEBUG [723fa7e0] Command: /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null
+ DEBUG [723fa7e0] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [723fa7e0] Finished in 0.040 seconds with exit status 0 (successful).
+ DEBUG [485d7649] Running [ -f /var/www/html/golf/repo/HEAD ] as pi@rasp
+ DEBUG [485d7649] Command: [ -f /var/www/html/golf/repo/HEAD ]
+ DEBUG [485d7649] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/golf/repo
+ DEBUG [fc3b83f3] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [fc3b83f3] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [fc3b83f3] Finished in 0.019 seconds with exit status 0 (successful).
+  INFO [e0e73771] Running /usr/bin/env git remote update --prune as pi@rasp
+ DEBUG [e0e73771] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [e0e73771] 	Fetching origin
+  INFO [e0e73771] Finished in 0.473 seconds with exit status 0 (successful).
+ DEBUG [ced0cf62] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [ced0cf62] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [ced0cf62] Finished in 0.032 seconds with exit status 0 (successful).
+  INFO [c5667301] Running /usr/bin/env mkdir -p /var/www/html/golf/releases/20170104231912 as pi@rasp
+ DEBUG [c5667301] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env mkdir -p /var/www/html/golf/releases/20170104231912 )
+  INFO [c5667301] Finished in 0.028 seconds with exit status 0 (successful).
+  INFO [792e0b17] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170104231912 as pi@rasp
+ DEBUG [792e0b17] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170104231912 )
+  INFO [792e0b17] Finished in 0.052 seconds with exit status 0 (successful).
+ DEBUG [b809082f] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [b809082f] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [b809082f] Finished in 0.019 seconds with exit status 0 (successful).
+ DEBUG [0fe6c46e] Running /usr/bin/env git rev-list --max-count=1 master as pi@rasp
+ DEBUG [0fe6c46e] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [0fe6c46e] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [0fe6c46e] Finished in 0.044 seconds with exit status 0 (successful).
+ DEBUG [b26ecaa8] Running if test ! -d /var/www/html/golf/releases/20170104231912; then echo "Directory does not exist '/var/www/html/golf/releases/20170104231912'" 1>&2; false; fi as pi@rasp
+ DEBUG [b26ecaa8] Command: if test ! -d /var/www/html/golf/releases/20170104231912; then echo "Directory does not exist '/var/www/html/golf/releases/20170104231912'" 1>&2; false; fi
+ DEBUG [b26ecaa8] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO [848abb62] Running /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION as pi@rasp
+ DEBUG [848abb62] Command: cd /var/www/html/golf/releases/20170104231912 && /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION
+  INFO [848abb62] Finished in 0.023 seconds with exit status 0 (successful).
+ DEBUG [d69e77ff] Running if test ! -d /var/www/html/golf/releases/20170104231912; then echo "Directory does not exist '/var/www/html/golf/releases/20170104231912'" 1>&2; false; fi as pi@rasp
+ DEBUG [d69e77ff] Command: if test ! -d /var/www/html/golf/releases/20170104231912; then echo "Directory does not exist '/var/www/html/golf/releases/20170104231912'" 1>&2; false; fi
+ DEBUG [d69e77ff] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO [705598db] Running /usr/bin/env composer install --no-dev --prefer-dist --no-interaction --quiet --optimize-autoloader as pi@rasp
+ DEBUG [705598db] Command: cd /var/www/html/golf/releases/20170104231912 && /usr/bin/env composer install --no-dev --prefer-dist --no-interaction --quiet --optimize-autoloader
+  INFO [705598db] Finished in 33.870 seconds with exit status 0 (successful).
+  INFO [ed3f1db0] Running /usr/bin/env ln -s /var/www/html/golf/releases/20170104231912 /var/www/html/golf/releases/current as pi@rasp
+ DEBUG [ed3f1db0] Command: /usr/bin/env ln -s /var/www/html/golf/releases/20170104231912 /var/www/html/golf/releases/current
+  INFO [ed3f1db0] Finished in 0.022 seconds with exit status 0 (successful).
+  INFO [f2a77d0c] Running /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf as pi@rasp
+ DEBUG [f2a77d0c] Command: /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf
+  INFO [f2a77d0c] Finished in 0.022 seconds with exit status 0 (successful).
+ DEBUG [e36fcb7e] Running /usr/bin/env ls -x /var/www/html/golf/releases as pi@rasp
+ DEBUG [e36fcb7e] Command: /usr/bin/env ls -x /var/www/html/golf/releases
+ DEBUG [e36fcb7e] 	20170104230343	20170104230437	20170104230554	20170104230745	20170104231443
+20170104231912
+ DEBUG [e36fcb7e] Finished in 0.023 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on rasp
+  INFO [ed421fb3] Running /usr/bin/env rm -rf /var/www/html/golf/releases/20170104230343 as pi@rasp
+ DEBUG [ed421fb3] Command: /usr/bin/env rm -rf /var/www/html/golf/releases/20170104230343
+  INFO [ed421fb3] Finished in 0.044 seconds with exit status 0 (successful).
+ DEBUG [433a6319] Running if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi as pi@rasp
+ DEBUG [433a6319] Command: if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi
+ DEBUG [433a6319] Finished in 0.017 seconds with exit status 0 (successful).
+  INFO [d09cce25] Running /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170104231912 by ewingate" >> /var/www/html/golf/revisions.log as pi@rasp
+ DEBUG [d09cce25] Command: cd /var/www/html/golf/releases && /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170104231912 by ewingate" >> /var/www/html/golf/revisions.log
+  INFO [d09cce25] Finished in 0.022 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-05 11:21:53 -0600 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [e9591fd4] Running /usr/bin/env mkdir -p /tmp as pi@rasp
+ DEBUG [e9591fd4] Command: /usr/bin/env mkdir -p /tmp
+  INFO [e9591fd4] Finished in 0.277 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Golf-production-ewingate.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Golf-production-ewingate.sh 100.0%
+  INFO [e66c7ade] Running /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh as pi@rasp
+ DEBUG [e66c7ade] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh
+  INFO [e66c7ade] Finished in 0.036 seconds with exit status 0 (successful).
+  INFO [a9534fa2] Running /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git as pi@rasp
+ DEBUG [a9534fa2] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git )
+ DEBUG [a9534fa2] 	d81e3a3a73e5a60b417d20db987f78824208ede4	refs/heads/master
+  INFO [a9534fa2] Finished in 0.596 seconds with exit status 0 (successful).
+  INFO [62c11424] Running /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases as pi@rasp
+ DEBUG [62c11424] Command: /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases
+  INFO [62c11424] Finished in 0.025 seconds with exit status 0 (successful).
+ DEBUG [9ca5b421] Running [ -f /var/www/html/golf/current/REVISION ] as pi@rasp
+ DEBUG [9ca5b421] Command: [ -f /var/www/html/golf/current/REVISION ]
+ DEBUG [9ca5b421] Finished in 0.021 seconds with exit status 0 (successful).
+ DEBUG [1cd6f7fd] Running /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null as pi@rasp
+ DEBUG [1cd6f7fd] Command: /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null
+ DEBUG [1cd6f7fd] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [1cd6f7fd] Finished in 0.040 seconds with exit status 0 (successful).
+ DEBUG [c12146c1] Running [ -f /var/www/html/golf/repo/HEAD ] as pi@rasp
+ DEBUG [c12146c1] Command: [ -f /var/www/html/golf/repo/HEAD ]
+ DEBUG [c12146c1] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/golf/repo
+ DEBUG [9146446c] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [9146446c] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [9146446c] Finished in 0.020 seconds with exit status 0 (successful).
+  INFO [b241fcb3] Running /usr/bin/env git remote update --prune as pi@rasp
+ DEBUG [b241fcb3] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [b241fcb3] 	Fetching origin
+  INFO [b241fcb3] Finished in 0.485 seconds with exit status 0 (successful).
+ DEBUG [06ba7507] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [06ba7507] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [06ba7507] Finished in 0.037 seconds with exit status 0 (successful).
+  INFO [8fbf8892] Running /usr/bin/env mkdir -p /var/www/html/golf/releases/20170105172155 as pi@rasp
+ DEBUG [8fbf8892] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env mkdir -p /var/www/html/golf/releases/20170105172155 )
+  INFO [8fbf8892] Finished in 0.026 seconds with exit status 0 (successful).
+  INFO [c7af764a] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170105172155 as pi@rasp
+ DEBUG [c7af764a] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170105172155 )
+  INFO [c7af764a] Finished in 0.053 seconds with exit status 0 (successful).
+ DEBUG [e81ad285] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [e81ad285] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [e81ad285] Finished in 0.023 seconds with exit status 0 (successful).
+ DEBUG [51000e5b] Running /usr/bin/env git rev-list --max-count=1 master as pi@rasp
+ DEBUG [51000e5b] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [51000e5b] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [51000e5b] Finished in 0.046 seconds with exit status 0 (successful).
+ DEBUG [5fd33404] Running if test ! -d /var/www/html/golf/releases/20170105172155; then echo "Directory does not exist '/var/www/html/golf/releases/20170105172155'" 1>&2; false; fi as pi@rasp
+ DEBUG [5fd33404] Command: if test ! -d /var/www/html/golf/releases/20170105172155; then echo "Directory does not exist '/var/www/html/golf/releases/20170105172155'" 1>&2; false; fi
+ DEBUG [5fd33404] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO [e35983c5] Running /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION as pi@rasp
+ DEBUG [e35983c5] Command: cd /var/www/html/golf/releases/20170105172155 && /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION
+  INFO [e35983c5] Finished in 0.025 seconds with exit status 0 (successful).
+ DEBUG [d59ebb7a] Running if test ! -d /var/www/html/golf/releases/20170105172155; then echo "Directory does not exist '/var/www/html/golf/releases/20170105172155'" 1>&2; false; fi as pi@rasp
+ DEBUG [d59ebb7a] Command: if test ! -d /var/www/html/golf/releases/20170105172155; then echo "Directory does not exist '/var/www/html/golf/releases/20170105172155'" 1>&2; false; fi
+ DEBUG [d59ebb7a] Finished in 0.023 seconds with exit status 0 (successful).
+  INFO [a8af597f] Running /usr/bin/env composer install --no-dev --prefer-dist --no-interaction --quiet --optimize-autoloader as pi@rasp
+ DEBUG [a8af597f] Command: cd /var/www/html/golf/releases/20170105172155 && /usr/bin/env composer install --no-dev --prefer-dist --no-interaction --quiet --optimize-autoloader
+  INFO [a8af597f] Finished in 54.527 seconds with exit status 0 (successful).
+  INFO [eeb722a8] Running /usr/bin/env ln -s /var/www/html/golf/releases/20170105172155 /var/www/html/golf/releases/current as pi@rasp
+ DEBUG [eeb722a8] Command: /usr/bin/env ln -s /var/www/html/golf/releases/20170105172155 /var/www/html/golf/releases/current
+  INFO [eeb722a8] Finished in 0.022 seconds with exit status 0 (successful).
+  INFO [2ce61f42] Running /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf as pi@rasp
+ DEBUG [2ce61f42] Command: /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf
+  INFO [2ce61f42] Finished in 0.030 seconds with exit status 0 (successful).
+ DEBUG [a24801d6] Running /usr/bin/env ls -x /var/www/html/golf/releases as pi@rasp
+ DEBUG [a24801d6] Command: /usr/bin/env ls -x /var/www/html/golf/releases
+ DEBUG [a24801d6] 	20170104230437	20170104230554	20170104230745	20170104231443	20170104231912
+20170105172155
+ DEBUG [a24801d6] Finished in 0.023 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on rasp
+  INFO [88a5716a] Running /usr/bin/env rm -rf /var/www/html/golf/releases/20170104230437 as pi@rasp
+ DEBUG [88a5716a] Command: /usr/bin/env rm -rf /var/www/html/golf/releases/20170104230437
+  INFO [88a5716a] Finished in 0.047 seconds with exit status 0 (successful).
+ DEBUG [d34e0a14] Running if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi as pi@rasp
+ DEBUG [d34e0a14] Command: if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi
+ DEBUG [d34e0a14] Finished in 0.019 seconds with exit status 0 (successful).
+  INFO [9997a445] Running /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170105172155 by ewingate" >> /var/www/html/golf/revisions.log as pi@rasp
+ DEBUG [9997a445] Command: cd /var/www/html/golf/releases && /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170105172155 by ewingate" >> /var/www/html/golf/revisions.log
+  INFO [9997a445] Finished in 0.022 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-05 11:27:44 -0600 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [dce220da] Running /usr/bin/env mkdir -p /tmp as pi@rasp
+ DEBUG [dce220da] Command: /usr/bin/env mkdir -p /tmp
+  INFO [dce220da] Finished in 0.328 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Golf-production-ewingate.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Golf-production-ewingate.sh 100.0%
+  INFO [3ebb9da5] Running /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh as pi@rasp
+ DEBUG [3ebb9da5] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh
+  INFO [3ebb9da5] Finished in 0.035 seconds with exit status 0 (successful).
+  INFO [b7a43328] Running /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git as pi@rasp
+ DEBUG [b7a43328] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git )
+ DEBUG [b7a43328] 	d81e3a3a73e5a60b417d20db987f78824208ede4	refs/heads/master
+  INFO [b7a43328] Finished in 0.595 seconds with exit status 0 (successful).
+  INFO [f0937fa6] Running /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases as pi@rasp
+ DEBUG [f0937fa6] Command: /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases
+  INFO [f0937fa6] Finished in 0.026 seconds with exit status 0 (successful).
+ DEBUG [6c5b8016] Running [ -f /var/www/html/golf/current/REVISION ] as pi@rasp
+ DEBUG [6c5b8016] Command: [ -f /var/www/html/golf/current/REVISION ]
+ DEBUG [6c5b8016] Finished in 0.021 seconds with exit status 0 (successful).
+ DEBUG [d8c36428] Running /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null as pi@rasp
+ DEBUG [d8c36428] Command: /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null
+ DEBUG [d8c36428] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [d8c36428] Finished in 0.039 seconds with exit status 0 (successful).
+ DEBUG [dad309c4] Running [ -f /var/www/html/golf/repo/HEAD ] as pi@rasp
+ DEBUG [dad309c4] Command: [ -f /var/www/html/golf/repo/HEAD ]
+ DEBUG [dad309c4] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/golf/repo
+ DEBUG [dbfdfa81] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [dbfdfa81] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [dbfdfa81] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO [b99477ef] Running /usr/bin/env git remote update --prune as pi@rasp
+ DEBUG [b99477ef] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [b99477ef] 	Fetching origin
+  INFO [b99477ef] Finished in 0.485 seconds with exit status 0 (successful).
+ DEBUG [b98023c5] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [b98023c5] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [b98023c5] Finished in 0.037 seconds with exit status 0 (successful).
+  INFO [2072101d] Running /usr/bin/env mkdir -p /var/www/html/golf/releases/20170105172745 as pi@rasp
+ DEBUG [2072101d] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env mkdir -p /var/www/html/golf/releases/20170105172745 )
+  INFO [2072101d] Finished in 0.026 seconds with exit status 0 (successful).
+  INFO [10241d61] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170105172745 as pi@rasp
+ DEBUG [10241d61] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170105172745 )
+  INFO [10241d61] Finished in 0.051 seconds with exit status 0 (successful).
+ DEBUG [fb92b8fa] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [fb92b8fa] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [fb92b8fa] Finished in 0.021 seconds with exit status 0 (successful).
+ DEBUG [1d437d51] Running /usr/bin/env git rev-list --max-count=1 master as pi@rasp
+ DEBUG [1d437d51] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [1d437d51] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [1d437d51] Finished in 0.042 seconds with exit status 0 (successful).
+ DEBUG [0f9e075c] Running if test ! -d /var/www/html/golf/releases/20170105172745; then echo "Directory does not exist '/var/www/html/golf/releases/20170105172745'" 1>&2; false; fi as pi@rasp
+ DEBUG [0f9e075c] Command: if test ! -d /var/www/html/golf/releases/20170105172745; then echo "Directory does not exist '/var/www/html/golf/releases/20170105172745'" 1>&2; false; fi
+ DEBUG [0f9e075c] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO [ab49d992] Running /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION as pi@rasp
+ DEBUG [ab49d992] Command: cd /var/www/html/golf/releases/20170105172745 && /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION
+  INFO [ab49d992] Finished in 0.022 seconds with exit status 0 (successful).
+ DEBUG [a1941340] Running if test ! -d /var/www/html/golf/releases/20170105172745; then echo "Directory does not exist '/var/www/html/golf/releases/20170105172745'" 1>&2; false; fi as pi@rasp
+ DEBUG [a1941340] Command: if test ! -d /var/www/html/golf/releases/20170105172745; then echo "Directory does not exist '/var/www/html/golf/releases/20170105172745'" 1>&2; false; fi
+ DEBUG [a1941340] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO [585910bc] Running /usr/bin/env composer install --no-dev --prefer-dist --no-interaction --quiet --optimize-autoloader as pi@rasp
+ DEBUG [585910bc] Command: cd /var/www/html/golf/releases/20170105172745 && /usr/bin/env composer install --no-dev --prefer-dist --no-interaction --quiet --optimize-autoloader
+  INFO [585910bc] Finished in 31.706 seconds with exit status 0 (successful).
+  INFO [1d7c974f] Running /usr/bin/env ln -s /var/www/html/golf/releases/20170105172745 /var/www/html/golf/releases/current as pi@rasp
+ DEBUG [1d7c974f] Command: /usr/bin/env ln -s /var/www/html/golf/releases/20170105172745 /var/www/html/golf/releases/current
+  INFO [1d7c974f] Finished in 0.021 seconds with exit status 0 (successful).
+  INFO [54777ede] Running /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf as pi@rasp
+ DEBUG [54777ede] Command: /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf
+  INFO [54777ede] Finished in 0.022 seconds with exit status 0 (successful).
+ DEBUG [a744a03a] Running /usr/bin/env ls -x /var/www/html/golf/releases as pi@rasp
+ DEBUG [a744a03a] Command: /usr/bin/env ls -x /var/www/html/golf/releases
+ DEBUG [a744a03a] 	20170104230554	20170104230745	20170104231443	20170104231912	20170105172155
+20170105172745
+ DEBUG [a744a03a] Finished in 0.023 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on rasp
+  INFO [5b23444a] Running /usr/bin/env rm -rf /var/www/html/golf/releases/20170104230554 as pi@rasp
+ DEBUG [5b23444a] Command: /usr/bin/env rm -rf /var/www/html/golf/releases/20170104230554
+  INFO [5b23444a] Finished in 0.048 seconds with exit status 0 (successful).
+ DEBUG [a2a417e3] Running if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi as pi@rasp
+ DEBUG [a2a417e3] Command: if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi
+ DEBUG [a2a417e3] Finished in 0.022 seconds with exit status 0 (successful).
+  INFO [b49377d4] Running /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170105172745 by ewingate" >> /var/www/html/golf/revisions.log as pi@rasp
+ DEBUG [b49377d4] Command: cd /var/www/html/golf/releases && /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170105172745 by ewingate" >> /var/www/html/golf/revisions.log
+  INFO [b49377d4] Finished in 0.022 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-05 11:29:50 -0600 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [a485d6a7] Running /usr/bin/env mkdir -p /tmp as pi@rasp
+ DEBUG [a485d6a7] Command: /usr/bin/env mkdir -p /tmp
+  INFO [a485d6a7] Finished in 0.259 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Golf-production-ewingate.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Golf-production-ewingate.sh 100.0%
+  INFO [87c643a2] Running /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh as pi@rasp
+ DEBUG [87c643a2] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh
+  INFO [87c643a2] Finished in 0.035 seconds with exit status 0 (successful).
+  INFO [8ec54366] Running /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git as pi@rasp
+ DEBUG [8ec54366] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git )
+ DEBUG [8ec54366] 	d81e3a3a73e5a60b417d20db987f78824208ede4	refs/heads/master
+  INFO [8ec54366] Finished in 0.543 seconds with exit status 0 (successful).
+  INFO [ed516f9c] Running /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases as pi@rasp
+ DEBUG [ed516f9c] Command: /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases
+  INFO [ed516f9c] Finished in 0.025 seconds with exit status 0 (successful).
+ DEBUG [861d1346] Running [ -f /var/www/html/golf/current/REVISION ] as pi@rasp
+ DEBUG [861d1346] Command: [ -f /var/www/html/golf/current/REVISION ]
+ DEBUG [861d1346] Finished in 0.021 seconds with exit status 0 (successful).
+ DEBUG [d96ad547] Running /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null as pi@rasp
+ DEBUG [d96ad547] Command: /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null
+ DEBUG [d96ad547] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [d96ad547] Finished in 0.039 seconds with exit status 0 (successful).
+ DEBUG [81015922] Running [ -f /var/www/html/golf/repo/HEAD ] as pi@rasp
+ DEBUG [81015922] Command: [ -f /var/www/html/golf/repo/HEAD ]
+ DEBUG [81015922] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/golf/repo
+ DEBUG [759e0fa4] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [759e0fa4] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [759e0fa4] Finished in 0.021 seconds with exit status 0 (successful).
+  INFO [e7dd1cfe] Running /usr/bin/env git remote update --prune as pi@rasp
+ DEBUG [e7dd1cfe] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [e7dd1cfe] 	Fetching origin
+  INFO [e7dd1cfe] Finished in 0.484 seconds with exit status 0 (successful).
+ DEBUG [0d226d21] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [0d226d21] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [0d226d21] Finished in 0.038 seconds with exit status 0 (successful).
+  INFO [5ab7e0d6] Running /usr/bin/env mkdir -p /var/www/html/golf/releases/20170105172951 as pi@rasp
+ DEBUG [5ab7e0d6] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env mkdir -p /var/www/html/golf/releases/20170105172951 )
+  INFO [5ab7e0d6] Finished in 0.027 seconds with exit status 0 (successful).
+  INFO [559ed9be] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170105172951 as pi@rasp
+ DEBUG [559ed9be] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170105172951 )
+  INFO [559ed9be] Finished in 0.083 seconds with exit status 0 (successful).
+ DEBUG [75484a07] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [75484a07] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [75484a07] Finished in 0.024 seconds with exit status 0 (successful).
+ DEBUG [f91cadad] Running /usr/bin/env git rev-list --max-count=1 master as pi@rasp
+ DEBUG [f91cadad] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [f91cadad] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [f91cadad] Finished in 0.059 seconds with exit status 0 (successful).
+ DEBUG [77f23129] Running if test ! -d /var/www/html/golf/releases/20170105172951; then echo "Directory does not exist '/var/www/html/golf/releases/20170105172951'" 1>&2; false; fi as pi@rasp
+ DEBUG [77f23129] Command: if test ! -d /var/www/html/golf/releases/20170105172951; then echo "Directory does not exist '/var/www/html/golf/releases/20170105172951'" 1>&2; false; fi
+ DEBUG [77f23129] Finished in 0.027 seconds with exit status 0 (successful).
+  INFO [51e0bcbd] Running /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION as pi@rasp
+ DEBUG [51e0bcbd] Command: cd /var/www/html/golf/releases/20170105172951 && /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION
+  INFO [51e0bcbd] Finished in 0.033 seconds with exit status 0 (successful).
+  INFO [ebfb2f7f] Running /usr/bin/env ln -s /var/www/html/golf/releases/20170105172951 /var/www/html/golf/releases/current as pi@rasp
+ DEBUG [ebfb2f7f] Command: /usr/bin/env ln -s /var/www/html/golf/releases/20170105172951 /var/www/html/golf/releases/current
+  INFO [ebfb2f7f] Finished in 0.033 seconds with exit status 0 (successful).
+  INFO [f111423f] Running /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf as pi@rasp
+ DEBUG [f111423f] Command: /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf
+  INFO [f111423f] Finished in 0.050 seconds with exit status 0 (successful).
+ DEBUG [f2208854] Running /usr/bin/env ls -x /var/www/html/golf/releases as pi@rasp
+ DEBUG [f2208854] Command: /usr/bin/env ls -x /var/www/html/golf/releases
+ DEBUG [f2208854] 	20170104230745	20170104231443	20170104231912	20170105172155	20170105172745
+20170105172951
+ DEBUG [f2208854] Finished in 0.032 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on rasp
+  INFO [6995c590] Running /usr/bin/env rm -rf /var/www/html/golf/releases/20170104230745 as pi@rasp
+ DEBUG [6995c590] Command: /usr/bin/env rm -rf /var/www/html/golf/releases/20170104230745
+  INFO [6995c590] Finished in 0.060 seconds with exit status 0 (successful).
+ DEBUG [e26963dc] Running if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi as pi@rasp
+ DEBUG [e26963dc] Command: if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi
+ DEBUG [e26963dc] Finished in 0.024 seconds with exit status 0 (successful).
+  INFO [c44a08ed] Running /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170105172951 by ewingate" >> /var/www/html/golf/revisions.log as pi@rasp
+ DEBUG [c44a08ed] Command: cd /var/www/html/golf/releases && /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170105172951 by ewingate" >> /var/www/html/golf/revisions.log
+  INFO [c44a08ed] Finished in 0.050 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-05 11:34:07 -0600 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [2b331ef4] Running /usr/bin/env mkdir -p /tmp as pi@rasp
+ DEBUG [2b331ef4] Command: /usr/bin/env mkdir -p /tmp
+  INFO [2b331ef4] Finished in 0.257 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Golf-production-ewingate.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Golf-production-ewingate.sh 100.0%
+  INFO [96f50354] Running /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh as pi@rasp
+ DEBUG [96f50354] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh
+  INFO [96f50354] Finished in 0.035 seconds with exit status 0 (successful).
+  INFO [01f55d34] Running /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git as pi@rasp
+ DEBUG [01f55d34] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git )
+ DEBUG [01f55d34] 	d81e3a3a73e5a60b417d20db987f78824208ede4	refs/heads/master
+  INFO [01f55d34] Finished in 0.558 seconds with exit status 0 (successful).
+  INFO [bf890a7d] Running /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases as pi@rasp
+ DEBUG [bf890a7d] Command: /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases
+  INFO [bf890a7d] Finished in 0.024 seconds with exit status 0 (successful).
+ DEBUG [e3e0fc3a] Running [ -f /var/www/html/golf/current/REVISION ] as pi@rasp
+ DEBUG [e3e0fc3a] Command: [ -f /var/www/html/golf/current/REVISION ]
+ DEBUG [e3e0fc3a] Finished in 0.021 seconds with exit status 0 (successful).
+ DEBUG [f0037515] Running /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null as pi@rasp
+ DEBUG [f0037515] Command: /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null
+ DEBUG [f0037515] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [f0037515] Finished in 0.039 seconds with exit status 0 (successful).
+ DEBUG [3e22bdf6] Running [ -f /var/www/html/golf/repo/HEAD ] as pi@rasp
+ DEBUG [3e22bdf6] Command: [ -f /var/www/html/golf/repo/HEAD ]
+ DEBUG [3e22bdf6] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/golf/repo
+ DEBUG [c3dcd4c7] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [c3dcd4c7] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [c3dcd4c7] Finished in 0.020 seconds with exit status 0 (successful).
+  INFO [3f0f7b85] Running /usr/bin/env git remote update --prune as pi@rasp
+ DEBUG [3f0f7b85] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [3f0f7b85] 	Fetching origin
+  INFO [3f0f7b85] Finished in 0.484 seconds with exit status 0 (successful).
+ DEBUG [19f427a1] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [19f427a1] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [19f427a1] Finished in 0.037 seconds with exit status 0 (successful).
+  INFO [f1962729] Running /usr/bin/env mkdir -p /var/www/html/golf/releases/20170105173408 as pi@rasp
+ DEBUG [f1962729] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env mkdir -p /var/www/html/golf/releases/20170105173408 )
+  INFO [f1962729] Finished in 0.026 seconds with exit status 0 (successful).
+  INFO [19e0d187] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170105173408 as pi@rasp
+ DEBUG [19e0d187] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170105173408 )
+  INFO [19e0d187] Finished in 0.051 seconds with exit status 0 (successful).
+ DEBUG [81a34871] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [81a34871] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [81a34871] Finished in 0.020 seconds with exit status 0 (successful).
+ DEBUG [43cb3c72] Running /usr/bin/env git rev-list --max-count=1 master as pi@rasp
+ DEBUG [43cb3c72] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [43cb3c72] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [43cb3c72] Finished in 0.043 seconds with exit status 0 (successful).
+ DEBUG [e17edaf5] Running if test ! -d /var/www/html/golf/releases/20170105173408; then echo "Directory does not exist '/var/www/html/golf/releases/20170105173408'" 1>&2; false; fi as pi@rasp
+ DEBUG [e17edaf5] Command: if test ! -d /var/www/html/golf/releases/20170105173408; then echo "Directory does not exist '/var/www/html/golf/releases/20170105173408'" 1>&2; false; fi
+ DEBUG [e17edaf5] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO [293a89a9] Running /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION as pi@rasp
+ DEBUG [293a89a9] Command: cd /var/www/html/golf/releases/20170105173408 && /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION
+  INFO [293a89a9] Finished in 0.025 seconds with exit status 0 (successful).
+  INFO [2f56287d] Running /usr/bin/env ln -s /var/www/html/golf/releases/20170105173408 /var/www/html/golf/releases/current as pi@rasp
+ DEBUG [2f56287d] Command: /usr/bin/env ln -s /var/www/html/golf/releases/20170105173408 /var/www/html/golf/releases/current
+  INFO [2f56287d] Finished in 0.022 seconds with exit status 0 (successful).
+  INFO [1d752be0] Running /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf as pi@rasp
+ DEBUG [1d752be0] Command: /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf
+  INFO [1d752be0] Finished in 0.038 seconds with exit status 0 (successful).
+ DEBUG [c4ed4e9c] Running /usr/bin/env ls -x /var/www/html/golf/releases as pi@rasp
+ DEBUG [c4ed4e9c] Command: /usr/bin/env ls -x /var/www/html/golf/releases
+ DEBUG [c4ed4e9c] 	20170104231443	20170104231912	20170105172155	20170105172745	20170105172951
+20170105173408
+ DEBUG [c4ed4e9c] Finished in 0.024 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-05 11:35:59 -0600 cap production deploy:cleanup
+  INFO ---------------------------------------------------------------------------
+ DEBUG [26f443a9] Running /usr/bin/env ls -x /var/www/html/golf/releases as pi@rasp
+ DEBUG [26f443a9] Command: /usr/bin/env ls -x /var/www/html/golf/releases
+ DEBUG [26f443a9] 	20170104231443	20170104231912	20170105172155	20170105172745	20170105172951
+20170105173408
+ DEBUG [26f443a9] Finished in 0.244 seconds with exit status 0 (successful).
+  INFO Keeping 3 of 6 deployed releases on rasp
+  INFO [68f110e4] Running /usr/bin/env rm -rf /var/www/html/golf/releases/20170104231443 /var/www/html/golf/releases/20170104231912 /var/www/html/golf/releases/20170105172155 as pi@rasp
+ DEBUG [68f110e4] Command: /usr/bin/env rm -rf /var/www/html/golf/releases/20170104231443 /var/www/html/golf/releases/20170104231912 /var/www/html/golf/releases/20170105172155
+  INFO [68f110e4] Finished in 0.931 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-05 11:40:19 -0600 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [521f2591] Running /usr/bin/env mkdir -p /tmp as pi@rasp
+ DEBUG [521f2591] Command: /usr/bin/env mkdir -p /tmp
+  INFO [521f2591] Finished in 0.353 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Golf-production-ewingate.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Golf-production-ewingate.sh 100.0%
+  INFO [c17c569b] Running /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh as pi@rasp
+ DEBUG [c17c569b] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh
+  INFO [c17c569b] Finished in 0.035 seconds with exit status 0 (successful).
+  INFO [028d01c0] Running /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git as pi@rasp
+ DEBUG [028d01c0] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git )
+ DEBUG [028d01c0] 	d81e3a3a73e5a60b417d20db987f78824208ede4	refs/heads/master
+  INFO [028d01c0] Finished in 0.598 seconds with exit status 0 (successful).
+  INFO [9a4be83c] Running /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases as pi@rasp
+ DEBUG [9a4be83c] Command: /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases
+  INFO [9a4be83c] Finished in 0.025 seconds with exit status 0 (successful).
+ DEBUG [8dfe4fca] Running [ -f /var/www/html/golf/current/REVISION ] as pi@rasp
+ DEBUG [8dfe4fca] Command: [ -f /var/www/html/golf/current/REVISION ]
+ DEBUG [8dfe4fca] Finished in 0.021 seconds with exit status 0 (successful).
+ DEBUG [c4d5a57a] Running /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null as pi@rasp
+ DEBUG [c4d5a57a] Command: /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null
+ DEBUG [c4d5a57a] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [c4d5a57a] Finished in 0.039 seconds with exit status 0 (successful).
+ DEBUG [785b1650] Running [ -f /var/www/html/golf/repo/HEAD ] as pi@rasp
+ DEBUG [785b1650] Command: [ -f /var/www/html/golf/repo/HEAD ]
+ DEBUG [785b1650] Finished in 0.020 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/golf/repo
+ DEBUG [d60cd8c4] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [d60cd8c4] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [d60cd8c4] Finished in 0.019 seconds with exit status 0 (successful).
+  INFO [1e3a431e] Running /usr/bin/env git remote update --prune as pi@rasp
+ DEBUG [1e3a431e] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [1e3a431e] 	Fetching origin
+  INFO [1e3a431e] Finished in 0.486 seconds with exit status 0 (successful).
+ DEBUG [dbb3a237] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [dbb3a237] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [dbb3a237] Finished in 0.037 seconds with exit status 0 (successful).
+  INFO [f5650a91] Running /usr/bin/env mkdir -p /var/www/html/golf/releases/20170105174020 as pi@rasp
+ DEBUG [f5650a91] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env mkdir -p /var/www/html/golf/releases/20170105174020 )
+  INFO [f5650a91] Finished in 0.029 seconds with exit status 0 (successful).
+  INFO [49aa4d8d] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170105174020 as pi@rasp
+ DEBUG [49aa4d8d] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170105174020 )
+  INFO [49aa4d8d] Finished in 0.049 seconds with exit status 0 (successful).
+ DEBUG [bb87b336] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [bb87b336] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [bb87b336] Finished in 0.020 seconds with exit status 0 (successful).
+ DEBUG [a3ef96f7] Running /usr/bin/env git rev-list --max-count=1 master as pi@rasp
+ DEBUG [a3ef96f7] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [a3ef96f7] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [a3ef96f7] Finished in 0.041 seconds with exit status 0 (successful).
+ DEBUG [29227c18] Running if test ! -d /var/www/html/golf/releases/20170105174020; then echo "Directory does not exist '/var/www/html/golf/releases/20170105174020'" 1>&2; false; fi as pi@rasp
+ DEBUG [29227c18] Command: if test ! -d /var/www/html/golf/releases/20170105174020; then echo "Directory does not exist '/var/www/html/golf/releases/20170105174020'" 1>&2; false; fi
+ DEBUG [29227c18] Finished in 0.020 seconds with exit status 0 (successful).
+  INFO [43b71936] Running /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION as pi@rasp
+ DEBUG [43b71936] Command: cd /var/www/html/golf/releases/20170105174020 && /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION
+  INFO [43b71936] Finished in 0.024 seconds with exit status 0 (successful).
+  INFO [4dfed50b] Running /usr/bin/env ln -s /var/www/html/golf/releases/20170105174020 /var/www/html/golf/releases/current as pi@rasp
+ DEBUG [4dfed50b] Command: /usr/bin/env ln -s /var/www/html/golf/releases/20170105174020 /var/www/html/golf/releases/current
+  INFO [4dfed50b] Finished in 0.023 seconds with exit status 0 (successful).
+  INFO [801de0b7] Running /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf as pi@rasp
+ DEBUG [801de0b7] Command: /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf
+  INFO [801de0b7] Finished in 0.040 seconds with exit status 0 (successful).
+ DEBUG [61386b11] Running /usr/bin/env ls -x /var/www/html/golf/releases as pi@rasp
+ DEBUG [61386b11] Command: /usr/bin/env ls -x /var/www/html/golf/releases
+ DEBUG [61386b11] 	20170105172745	20170105172951	20170105173408	20170105174020
+ DEBUG [61386b11] Finished in 0.024 seconds with exit status 0 (successful).
+  INFO Keeping 3 of 4 deployed releases on rasp
+  INFO [1fd54e06] Running /usr/bin/env rm -rf /var/www/html/golf/releases/20170105172745 as pi@rasp
+ DEBUG [1fd54e06] Command: /usr/bin/env rm -rf /var/www/html/golf/releases/20170105172745
+  INFO [1fd54e06] Finished in 0.397 seconds with exit status 0 (successful).
+ DEBUG [c4784157] Running if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi as pi@rasp
+ DEBUG [c4784157] Command: if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi
+ DEBUG [c4784157] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO [a07d4e3b] Running /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170105174020 by ewingate" >> /var/www/html/golf/revisions.log as pi@rasp
+ DEBUG [a07d4e3b] Command: cd /var/www/html/golf/releases && /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170105174020 by ewingate" >> /var/www/html/golf/revisions.log
+  INFO [a07d4e3b] Finished in 0.039 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-05 14:03:13 -0600 cap production check_write_permissions
+  INFO ---------------------------------------------------------------------------
+ DEBUG [bd0f6d45] Running [ -w /var/www/html/golf/ ] as pi@rasp
+ DEBUG [bd0f6d45] Command: [ -w /var/www/html/golf/ ]
+ DEBUG [bd0f6d45] Finished in 0.333 seconds with exit status 0 (successful).
+  INFO /var/www/html/golf/ is writable on rasp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-05 14:03:32 -0600 cap production check_write_permissions
+  INFO ---------------------------------------------------------------------------
+ DEBUG [9e00031a] Running [ -w /var/www/html/golf/ ] as pi@rasp
+ DEBUG [9e00031a] Command: [ -w /var/www/html/golf/ ]
+ DEBUG [9e00031a] Finished in 0.269 seconds with exit status 0 (successful).
+  INFO /var/www/html/golf/ is writable on rasp
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-05 14:04:25 -0600 cap production git:check
+  INFO ---------------------------------------------------------------------------
+  INFO [456ea2e5] Running /usr/bin/env mkdir -p /tmp as pi@rasp
+ DEBUG [456ea2e5] Command: /usr/bin/env mkdir -p /tmp
+  INFO [456ea2e5] Finished in 0.270 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Golf-production-ewingate.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Golf-production-ewingate.sh 100.0%
+  INFO [dddb1a27] Running /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh as pi@rasp
+ DEBUG [dddb1a27] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh
+  INFO [dddb1a27] Finished in 0.039 seconds with exit status 0 (successful).
+  INFO [5ca575cb] Running /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git as pi@rasp
+ DEBUG [5ca575cb] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git )
+ DEBUG [5ca575cb] 	d81e3a3a73e5a60b417d20db987f78824208ede4	refs/heads/master
+  INFO [5ca575cb] Finished in 0.538 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-05 14:18:12 -0600 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [6d76705f] Running /usr/bin/env mkdir -p /tmp as pi@rasp
+ DEBUG [6d76705f] Command: /usr/bin/env mkdir -p /tmp
+  INFO [6d76705f] Finished in 0.298 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Golf-production-ewingate.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Golf-production-ewingate.sh 100.0%
+  INFO [793c106c] Running /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh as pi@rasp
+ DEBUG [793c106c] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh
+  INFO [793c106c] Finished in 0.037 seconds with exit status 0 (successful).
+  INFO [39ad6ed4] Running /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git as pi@rasp
+ DEBUG [39ad6ed4] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git )
+ DEBUG [39ad6ed4] 	d81e3a3a73e5a60b417d20db987f78824208ede4	refs/heads/master
+  INFO [39ad6ed4] Finished in 0.576 seconds with exit status 0 (successful).
+  INFO [4c849bc4] Running /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases as pi@rasp
+ DEBUG [4c849bc4] Command: /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases
+  INFO [4c849bc4] Finished in 0.025 seconds with exit status 0 (successful).
+ DEBUG [6517f284] Running [ -f /var/www/html/golf/current/REVISION ] as pi@rasp
+ DEBUG [6517f284] Command: [ -f /var/www/html/golf/current/REVISION ]
+ DEBUG [6517f284] Finished in 0.023 seconds with exit status 0 (successful).
+ DEBUG [0ff30b18] Running /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null as pi@rasp
+ DEBUG [0ff30b18] Command: /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null
+ DEBUG [0ff30b18] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [0ff30b18] Finished in 0.041 seconds with exit status 0 (successful).
+ DEBUG [8d2f8e1f] Running [ -f /var/www/html/golf/repo/HEAD ] as pi@rasp
+ DEBUG [8d2f8e1f] Command: [ -f /var/www/html/golf/repo/HEAD ]
+ DEBUG [8d2f8e1f] Finished in 0.019 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/golf/repo
+ DEBUG [6de0752d] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [6de0752d] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [6de0752d] Finished in 0.019 seconds with exit status 0 (successful).
+  INFO [acee19fc] Running /usr/bin/env git remote update --prune as pi@rasp
+ DEBUG [acee19fc] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [acee19fc] 	Fetching origin
+  INFO [acee19fc] Finished in 0.480 seconds with exit status 0 (successful).
+ DEBUG [5274f658] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [5274f658] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [5274f658] Finished in 0.038 seconds with exit status 0 (successful).
+  INFO [fa0cd3d0] Running /usr/bin/env mkdir -p /var/www/html/golf/releases/20170105201813 as pi@rasp
+ DEBUG [fa0cd3d0] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env mkdir -p /var/www/html/golf/releases/20170105201813 )
+  INFO [fa0cd3d0] Finished in 0.029 seconds with exit status 0 (successful).
+  INFO [33ebe6ba] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170105201813 as pi@rasp
+ DEBUG [33ebe6ba] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170105201813 )
+  INFO [33ebe6ba] Finished in 0.049 seconds with exit status 0 (successful).
+ DEBUG [8179aef2] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [8179aef2] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [8179aef2] Finished in 0.019 seconds with exit status 0 (successful).
+ DEBUG [b5a864fa] Running /usr/bin/env git rev-list --max-count=1 master as pi@rasp
+ DEBUG [b5a864fa] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [b5a864fa] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [b5a864fa] Finished in 0.043 seconds with exit status 0 (successful).
+ DEBUG [52b1cffd] Running if test ! -d /var/www/html/golf/releases/20170105201813; then echo "Directory does not exist '/var/www/html/golf/releases/20170105201813'" 1>&2; false; fi as pi@rasp
+ DEBUG [52b1cffd] Command: if test ! -d /var/www/html/golf/releases/20170105201813; then echo "Directory does not exist '/var/www/html/golf/releases/20170105201813'" 1>&2; false; fi
+ DEBUG [52b1cffd] Finished in 0.020 seconds with exit status 0 (successful).
+  INFO [f16736db] Running /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION as pi@rasp
+ DEBUG [f16736db] Command: cd /var/www/html/golf/releases/20170105201813 && /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION
+  INFO [f16736db] Finished in 0.022 seconds with exit status 0 (successful).
+  INFO [5db17337] Running /usr/bin/env ln -s /var/www/html/golf/releases/20170105201813 /var/www/html/golf/releases/current as pi@rasp
+ DEBUG [5db17337] Command: /usr/bin/env ln -s /var/www/html/golf/releases/20170105201813 /var/www/html/golf/releases/current
+  INFO [5db17337] Finished in 0.021 seconds with exit status 0 (successful).
+  INFO [b64d068e] Running /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf as pi@rasp
+ DEBUG [b64d068e] Command: /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf
+  INFO [b64d068e] Finished in 0.040 seconds with exit status 0 (successful).
+ DEBUG [734f2bf8] Running /usr/bin/env ls -x /var/www/html/golf/releases as pi@rasp
+ DEBUG [734f2bf8] Command: /usr/bin/env ls -x /var/www/html/golf/releases
+ DEBUG [734f2bf8] 	20170105172951	20170105173408	20170105174020	20170105201813
+ DEBUG [734f2bf8] Finished in 0.028 seconds with exit status 0 (successful).
+  INFO Keeping 3 of 4 deployed releases on rasp
+  INFO [29b4c31b] Running /usr/bin/env rm -rf /var/www/html/golf/releases/20170105172951 as pi@rasp
+ DEBUG [29b4c31b] Command: /usr/bin/env rm -rf /var/www/html/golf/releases/20170105172951
+  INFO [29b4c31b] Finished in 0.030 seconds with exit status 0 (successful).
+  INFO [260e01f6] Running /usr/bin/env uptime as pi@rasp
+ DEBUG [260e01f6] Command: /usr/bin/env uptime
+ DEBUG [260e01f6] 	 20:18:14 up 1 day, 17:22,  1 user,  load average: 0.00, 0.00, 0.00
+  INFO [260e01f6] Finished in 0.025 seconds with exit status 0 (successful).
+ DEBUG [f4859e0f] Running if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi as pi@rasp
+ DEBUG [f4859e0f] Command: if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi
+ DEBUG [f4859e0f] Finished in 0.032 seconds with exit status 0 (successful).
+  INFO [96dcbc97] Running /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170105201813 by ewingate" >> /var/www/html/golf/revisions.log as pi@rasp
+ DEBUG [96dcbc97] Command: cd /var/www/html/golf/releases && /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170105201813 by ewingate" >> /var/www/html/golf/revisions.log
+  INFO [96dcbc97] Finished in 0.026 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-05 14:20:21 -0600 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [f3e21de2] Running /usr/bin/env mkdir -p /tmp as pi@rasp
+ DEBUG [f3e21de2] Command: /usr/bin/env mkdir -p /tmp
+  INFO [f3e21de2] Finished in 0.221 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Golf-production-ewingate.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Golf-production-ewingate.sh 100.0%
+  INFO [fe2482b5] Running /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh as pi@rasp
+ DEBUG [fe2482b5] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh
+  INFO [fe2482b5] Finished in 0.037 seconds with exit status 0 (successful).
+  INFO [3cd30d2d] Running /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git as pi@rasp
+ DEBUG [3cd30d2d] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git )
+ DEBUG [3cd30d2d] 	d81e3a3a73e5a60b417d20db987f78824208ede4	refs/heads/master
+  INFO [3cd30d2d] Finished in 0.607 seconds with exit status 0 (successful).
+  INFO [34304471] Running /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases as pi@rasp
+ DEBUG [34304471] Command: /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases
+  INFO [34304471] Finished in 0.035 seconds with exit status 0 (successful).
+ DEBUG [bda620dc] Running [ -f /var/www/html/golf/current/REVISION ] as pi@rasp
+ DEBUG [bda620dc] Command: [ -f /var/www/html/golf/current/REVISION ]
+ DEBUG [bda620dc] Finished in 0.025 seconds with exit status 0 (successful).
+ DEBUG [2b43ead4] Running /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null as pi@rasp
+ DEBUG [2b43ead4] Command: /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null
+ DEBUG [2b43ead4] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [2b43ead4] Finished in 0.056 seconds with exit status 0 (successful).
+ DEBUG [90e744e8] Running [ -f /var/www/html/golf/repo/HEAD ] as pi@rasp
+ DEBUG [90e744e8] Command: [ -f /var/www/html/golf/repo/HEAD ]
+ DEBUG [90e744e8] Finished in 0.024 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/golf/repo
+ DEBUG [822f0316] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [822f0316] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [822f0316] Finished in 0.026 seconds with exit status 0 (successful).
+  INFO [d739a420] Running /usr/bin/env git remote update --prune as pi@rasp
+ DEBUG [d739a420] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [d739a420] 	Fetching origin
+  INFO [d739a420] Finished in 0.543 seconds with exit status 0 (successful).
+ DEBUG [61c23710] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [61c23710] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [61c23710] Finished in 0.037 seconds with exit status 0 (successful).
+  INFO [de4b66a4] Running /usr/bin/env mkdir -p /var/www/html/golf/releases/20170105202022 as pi@rasp
+ DEBUG [de4b66a4] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env mkdir -p /var/www/html/golf/releases/20170105202022 )
+  INFO [de4b66a4] Finished in 0.026 seconds with exit status 0 (successful).
+  INFO [73382d4b] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170105202022 as pi@rasp
+ DEBUG [73382d4b] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170105202022 )
+  INFO [73382d4b] Finished in 0.055 seconds with exit status 0 (successful).
+ DEBUG [370b7002] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [370b7002] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [370b7002] Finished in 0.018 seconds with exit status 0 (successful).
+ DEBUG [90ab4499] Running /usr/bin/env git rev-list --max-count=1 master as pi@rasp
+ DEBUG [90ab4499] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [90ab4499] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [90ab4499] Finished in 0.043 seconds with exit status 0 (successful).
+ DEBUG [81986d01] Running if test ! -d /var/www/html/golf/releases/20170105202022; then echo "Directory does not exist '/var/www/html/golf/releases/20170105202022'" 1>&2; false; fi as pi@rasp
+ DEBUG [81986d01] Command: if test ! -d /var/www/html/golf/releases/20170105202022; then echo "Directory does not exist '/var/www/html/golf/releases/20170105202022'" 1>&2; false; fi
+ DEBUG [81986d01] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO [15871c01] Running /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION as pi@rasp
+ DEBUG [15871c01] Command: cd /var/www/html/golf/releases/20170105202022 && /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION
+  INFO [15871c01] Finished in 0.026 seconds with exit status 0 (successful).
+  INFO [61a89e11] Running /usr/bin/env ln -s /var/www/html/golf/releases/20170105202022 /var/www/html/golf/releases/current as pi@rasp
+ DEBUG [61a89e11] Command: /usr/bin/env ln -s /var/www/html/golf/releases/20170105202022 /var/www/html/golf/releases/current
+  INFO [61a89e11] Finished in 0.023 seconds with exit status 0 (successful).
+  INFO [3b679f3f] Running /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf as pi@rasp
+ DEBUG [3b679f3f] Command: /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf
+  INFO [3b679f3f] Finished in 0.039 seconds with exit status 0 (successful).
+ DEBUG [633a2949] Running /usr/bin/env ls -x /var/www/html/golf/releases as pi@rasp
+ DEBUG [633a2949] Command: /usr/bin/env ls -x /var/www/html/golf/releases
+ DEBUG [633a2949] 	20170105173408	20170105174020	20170105201813	20170105202022
+ DEBUG [633a2949] Finished in 0.024 seconds with exit status 0 (successful).
+  INFO Keeping 3 of 4 deployed releases on rasp
+  INFO [6e63d7e2] Running /usr/bin/env rm -rf /var/www/html/golf/releases/20170105173408 as pi@rasp
+ DEBUG [6e63d7e2] Command: /usr/bin/env rm -rf /var/www/html/golf/releases/20170105173408
+  INFO [6e63d7e2] Finished in 0.037 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-05 14:21:50 -0600 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [00f1770e] Running /usr/bin/env mkdir -p /tmp as pi@rasp
+ DEBUG [00f1770e] Command: /usr/bin/env mkdir -p /tmp
+  INFO [00f1770e] Finished in 0.218 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Golf-production-ewingate.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Golf-production-ewingate.sh 100.0%
+  INFO [50de1f8e] Running /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh as pi@rasp
+ DEBUG [50de1f8e] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh
+  INFO [50de1f8e] Finished in 0.036 seconds with exit status 0 (successful).
+  INFO [fa115c43] Running /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git as pi@rasp
+ DEBUG [fa115c43] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git )
+ DEBUG [fa115c43] 	d81e3a3a73e5a60b417d20db987f78824208ede4	refs/heads/master
+  INFO [fa115c43] Finished in 0.581 seconds with exit status 0 (successful).
+  INFO [bc41e9f3] Running /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases as pi@rasp
+ DEBUG [bc41e9f3] Command: /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases
+  INFO [bc41e9f3] Finished in 0.026 seconds with exit status 0 (successful).
+ DEBUG [009d4603] Running [ -f /var/www/html/golf/current/REVISION ] as pi@rasp
+ DEBUG [009d4603] Command: [ -f /var/www/html/golf/current/REVISION ]
+ DEBUG [009d4603] Finished in 0.022 seconds with exit status 0 (successful).
+ DEBUG [1be0a1eb] Running /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null as pi@rasp
+ DEBUG [1be0a1eb] Command: /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null
+ DEBUG [1be0a1eb] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [1be0a1eb] Finished in 0.037 seconds with exit status 0 (successful).
+ DEBUG [d34b41da] Running [ -f /var/www/html/golf/repo/HEAD ] as pi@rasp
+ DEBUG [d34b41da] Command: [ -f /var/www/html/golf/repo/HEAD ]
+ DEBUG [d34b41da] Finished in 0.019 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/golf/repo
+ DEBUG [3b83dda1] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [3b83dda1] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [3b83dda1] Finished in 0.019 seconds with exit status 0 (successful).
+  INFO [179a1d16] Running /usr/bin/env git remote update --prune as pi@rasp
+ DEBUG [179a1d16] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [179a1d16] 	Fetching origin
+  INFO [179a1d16] Finished in 0.484 seconds with exit status 0 (successful).
+ DEBUG [5529878f] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [5529878f] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [5529878f] Finished in 0.041 seconds with exit status 0 (successful).
+  INFO [c3fe57a3] Running /usr/bin/env mkdir -p /var/www/html/golf/releases/20170105202151 as pi@rasp
+ DEBUG [c3fe57a3] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env mkdir -p /var/www/html/golf/releases/20170105202151 )
+  INFO [c3fe57a3] Finished in 0.041 seconds with exit status 0 (successful).
+  INFO [7ef50ab9] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170105202151 as pi@rasp
+ DEBUG [7ef50ab9] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170105202151 )
+  INFO [7ef50ab9] Finished in 0.088 seconds with exit status 0 (successful).
+ DEBUG [7fd71f33] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [7fd71f33] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [7fd71f33] Finished in 0.018 seconds with exit status 0 (successful).
+ DEBUG [9ebc559f] Running /usr/bin/env git rev-list --max-count=1 master as pi@rasp
+ DEBUG [9ebc559f] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [9ebc559f] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [9ebc559f] Finished in 0.042 seconds with exit status 0 (successful).
+ DEBUG [e150b021] Running if test ! -d /var/www/html/golf/releases/20170105202151; then echo "Directory does not exist '/var/www/html/golf/releases/20170105202151'" 1>&2; false; fi as pi@rasp
+ DEBUG [e150b021] Command: if test ! -d /var/www/html/golf/releases/20170105202151; then echo "Directory does not exist '/var/www/html/golf/releases/20170105202151'" 1>&2; false; fi
+ DEBUG [e150b021] Finished in 0.022 seconds with exit status 0 (successful).
+  INFO [7622372c] Running /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION as pi@rasp
+ DEBUG [7622372c] Command: cd /var/www/html/golf/releases/20170105202151 && /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION
+  INFO [7622372c] Finished in 0.024 seconds with exit status 0 (successful).
+  INFO [3db4f532] Running /usr/bin/env ln -s /var/www/html/golf/releases/20170105202151 /var/www/html/golf/releases/current as pi@rasp
+ DEBUG [3db4f532] Command: /usr/bin/env ln -s /var/www/html/golf/releases/20170105202151 /var/www/html/golf/releases/current
+  INFO [3db4f532] Finished in 0.313 seconds with exit status 0 (successful).
+  INFO [d87d9ee4] Running /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf as pi@rasp
+ DEBUG [d87d9ee4] Command: /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf
+  INFO [d87d9ee4] Finished in 0.037 seconds with exit status 0 (successful).
+ DEBUG [0e31b1c1] Running /usr/bin/env ls -x /var/www/html/golf/releases as pi@rasp
+ DEBUG [0e31b1c1] Command: /usr/bin/env ls -x /var/www/html/golf/releases
+ DEBUG [0e31b1c1] 	20170105174020	20170105201813	20170105202022	20170105202151
+ DEBUG [0e31b1c1] Finished in 0.027 seconds with exit status 0 (successful).
+  INFO Keeping 3 of 4 deployed releases on rasp
+  INFO [945ef78a] Running /usr/bin/env rm -rf /var/www/html/golf/releases/20170105174020 as pi@rasp
+ DEBUG [945ef78a] Command: /usr/bin/env rm -rf /var/www/html/golf/releases/20170105174020
+  INFO [945ef78a] Finished in 0.031 seconds with exit status 0 (successful).
+  INFO [845db088] Running cp /tmp/.env /var/www/html/golf/current/ as pi@rasp
+ DEBUG [845db088] Command: cp /tmp/.env /var/www/html/golf/current/
+  INFO [845db088] Finished in 0.026 seconds with exit status 0 (successful).
+  INFO [132af678] Running chmod -R 777 /var/www/html/golf/current/storage/{logs,framework} as pi@rasp
+ DEBUG [132af678] Command: chmod -R 777 /var/www/html/golf/current/storage/{logs,framework}
+  INFO [132af678] Finished in 0.039 seconds with exit status 0 (successful).
+ DEBUG [b63973cd] Running if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi as pi@rasp
+ DEBUG [b63973cd] Command: if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi
+ DEBUG [b63973cd] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO [4fe30751] Running /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170105202151 by ewingate" >> /var/www/html/golf/revisions.log as pi@rasp
+ DEBUG [4fe30751] Command: cd /var/www/html/golf/releases && /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170105202151 by ewingate" >> /var/www/html/golf/revisions.log
+  INFO [4fe30751] Finished in 0.024 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-05 14:23:07 -0600 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [0540a331] Running /usr/bin/env mkdir -p /tmp as pi@rasp
+ DEBUG [0540a331] Command: /usr/bin/env mkdir -p /tmp
+  INFO [0540a331] Finished in 0.288 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Golf-production-ewingate.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Golf-production-ewingate.sh 100.0%
+  INFO [9d72989b] Running /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh as pi@rasp
+ DEBUG [9d72989b] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh
+  INFO [9d72989b] Finished in 0.036 seconds with exit status 0 (successful).
+  INFO [1b543cc8] Running /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git as pi@rasp
+ DEBUG [1b543cc8] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git )
+ DEBUG [1b543cc8] 	d81e3a3a73e5a60b417d20db987f78824208ede4	refs/heads/master
+  INFO [1b543cc8] Finished in 0.594 seconds with exit status 0 (successful).
+  INFO [5bfc6388] Running /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases as pi@rasp
+ DEBUG [5bfc6388] Command: /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases
+  INFO [5bfc6388] Finished in 0.025 seconds with exit status 0 (successful).
+ DEBUG [000b46d2] Running [ -f /var/www/html/golf/current/REVISION ] as pi@rasp
+ DEBUG [000b46d2] Command: [ -f /var/www/html/golf/current/REVISION ]
+ DEBUG [000b46d2] Finished in 0.021 seconds with exit status 0 (successful).
+ DEBUG [672a2a80] Running /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null as pi@rasp
+ DEBUG [672a2a80] Command: /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null
+ DEBUG [672a2a80] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [672a2a80] Finished in 0.040 seconds with exit status 0 (successful).
+ DEBUG [4282a4dc] Running [ -f /var/www/html/golf/repo/HEAD ] as pi@rasp
+ DEBUG [4282a4dc] Command: [ -f /var/www/html/golf/repo/HEAD ]
+ DEBUG [4282a4dc] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/golf/repo
+ DEBUG [b2d8d130] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [b2d8d130] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [b2d8d130] Finished in 0.019 seconds with exit status 0 (successful).
+  INFO [8ebbdc07] Running /usr/bin/env git remote update --prune as pi@rasp
+ DEBUG [8ebbdc07] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [8ebbdc07] 	Fetching origin
+  INFO [8ebbdc07] Finished in 0.485 seconds with exit status 0 (successful).
+ DEBUG [89a616dd] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [89a616dd] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [89a616dd] Finished in 0.036 seconds with exit status 0 (successful).
+  INFO [94320ae6] Running /usr/bin/env mkdir -p /var/www/html/golf/releases/20170105202308 as pi@rasp
+ DEBUG [94320ae6] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env mkdir -p /var/www/html/golf/releases/20170105202308 )
+  INFO [94320ae6] Finished in 0.026 seconds with exit status 0 (successful).
+  INFO [f8c749a7] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170105202308 as pi@rasp
+ DEBUG [f8c749a7] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170105202308 )
+  INFO [f8c749a7] Finished in 0.052 seconds with exit status 0 (successful).
+ DEBUG [e84683ec] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [e84683ec] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [e84683ec] Finished in 0.020 seconds with exit status 0 (successful).
+ DEBUG [2f064d13] Running /usr/bin/env git rev-list --max-count=1 master as pi@rasp
+ DEBUG [2f064d13] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [2f064d13] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [2f064d13] Finished in 0.043 seconds with exit status 0 (successful).
+ DEBUG [cef2db33] Running if test ! -d /var/www/html/golf/releases/20170105202308; then echo "Directory does not exist '/var/www/html/golf/releases/20170105202308'" 1>&2; false; fi as pi@rasp
+ DEBUG [cef2db33] Command: if test ! -d /var/www/html/golf/releases/20170105202308; then echo "Directory does not exist '/var/www/html/golf/releases/20170105202308'" 1>&2; false; fi
+ DEBUG [cef2db33] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO [fc4ddc93] Running /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION as pi@rasp
+ DEBUG [fc4ddc93] Command: cd /var/www/html/golf/releases/20170105202308 && /usr/bin/env echo "d81e3a3a73e5a60b417d20db987f78824208ede4" >> REVISION
+  INFO [fc4ddc93] Finished in 0.022 seconds with exit status 0 (successful).
+ DEBUG [fc1765d9] Running if test ! -d /var/www/html/golf/releases/20170105202308; then echo "Directory does not exist '/var/www/html/golf/releases/20170105202308'" 1>&2; false; fi as pi@rasp
+ DEBUG [fc1765d9] Command: if test ! -d /var/www/html/golf/releases/20170105202308; then echo "Directory does not exist '/var/www/html/golf/releases/20170105202308'" 1>&2; false; fi
+ DEBUG [fc1765d9] Finished in 0.019 seconds with exit status 0 (successful).
+  INFO [b2b1d92b] Running /usr/bin/env composer install --no-dev --prefer-dist --no-interaction --quiet --optimize-autoloader as pi@rasp
+ DEBUG [b2b1d92b] Command: cd /var/www/html/golf/releases/20170105202308 && /usr/bin/env composer install --no-dev --prefer-dist --no-interaction --quiet --optimize-autoloader
+  INFO [b2b1d92b] Finished in 33.273 seconds with exit status 0 (successful).
+  INFO [b2b9b95c] Running /usr/bin/env ln -s /var/www/html/golf/releases/20170105202308 /var/www/html/golf/releases/current as pi@rasp
+ DEBUG [b2b9b95c] Command: /usr/bin/env ln -s /var/www/html/golf/releases/20170105202308 /var/www/html/golf/releases/current
+  INFO [b2b9b95c] Finished in 0.021 seconds with exit status 0 (successful).
+  INFO [3e422556] Running /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf as pi@rasp
+ DEBUG [3e422556] Command: /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf
+  INFO [3e422556] Finished in 0.022 seconds with exit status 0 (successful).
+ DEBUG [6ddd76fd] Running /usr/bin/env ls -x /var/www/html/golf/releases as pi@rasp
+ DEBUG [6ddd76fd] Command: /usr/bin/env ls -x /var/www/html/golf/releases
+ DEBUG [6ddd76fd] 	20170105201813	20170105202022	20170105202151	20170105202308
+ DEBUG [6ddd76fd] Finished in 0.035 seconds with exit status 0 (successful).
+  INFO Keeping 3 of 4 deployed releases on rasp
+  INFO [b4179ce8] Running /usr/bin/env rm -rf /var/www/html/golf/releases/20170105201813 as pi@rasp
+ DEBUG [b4179ce8] Command: /usr/bin/env rm -rf /var/www/html/golf/releases/20170105201813
+  INFO [b4179ce8] Finished in 0.064 seconds with exit status 0 (successful).
+  INFO [0b256558] Running cp /tmp/.env /var/www/html/golf/current/ as pi@rasp
+ DEBUG [0b256558] Command: cp /tmp/.env /var/www/html/golf/current/
+  INFO [0b256558] Finished in 0.028 seconds with exit status 0 (successful).
+  INFO [cfdd1e7b] Running chmod -R 777 /var/www/html/golf/current/storage/{logs,framework} as pi@rasp
+ DEBUG [cfdd1e7b] Command: chmod -R 777 /var/www/html/golf/current/storage/{logs,framework}
+  INFO [cfdd1e7b] Finished in 0.034 seconds with exit status 0 (successful).
+ DEBUG [834cf834] Running if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi as pi@rasp
+ DEBUG [834cf834] Command: if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi
+ DEBUG [834cf834] Finished in 0.019 seconds with exit status 0 (successful).
+  INFO [ac6ad031] Running /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170105202308 by ewingate" >> /var/www/html/golf/revisions.log as pi@rasp
+ DEBUG [ac6ad031] Command: cd /var/www/html/golf/releases && /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170105202308 by ewingate" >> /var/www/html/golf/revisions.log
+  INFO [ac6ad031] Finished in 0.052 seconds with exit status 0 (successful).
