@@ -3,6 +3,8 @@ set :repo_url, "https://github.com/ericwingate/golf.git"
 set :scm_passphrase, ""
 set :keep_releases, 3
 
+set :composer_install_flags, '--no-dev --no-interaction --verbose --optimize-autoloader'
+
 set :stages, ["production"]
 set :default_stage, "production"
 

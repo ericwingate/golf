@@ -1941,3 +1941,325 @@ Composer version 1.3.0 2016-12-24 00:47:03
   INFO [ac6ad031] Running /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170105202308 by ewingate" >> /var/www/html/golf/revisions.log as pi@rasp
  DEBUG [ac6ad031] Command: cd /var/www/html/golf/releases && /usr/bin/env echo "Branch master (at d81e3a3a73e5a60b417d20db987f78824208ede4) deployed as release 20170105202308 by ewingate" >> /var/www/html/golf/revisions.log
   INFO [ac6ad031] Finished in 0.052 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-05 14:29:13 -0600 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [83117c00] Running /usr/bin/env mkdir -p /tmp as pi@rasp
+ DEBUG [83117c00] Command: /usr/bin/env mkdir -p /tmp
+  INFO [83117c00] Finished in 0.279 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Golf-production-ewingate.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Golf-production-ewingate.sh 100.0%
+  INFO [667aa43b] Running /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh as pi@rasp
+ DEBUG [667aa43b] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh
+  INFO [667aa43b] Finished in 0.034 seconds with exit status 0 (successful).
+  INFO [504cab7b] Running /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git as pi@rasp
+ DEBUG [504cab7b] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git )
+ DEBUG [504cab7b] 	5ab60fc5677e2435a7e8e2474b0d654348fd4a3b	refs/heads/master
+  INFO [504cab7b] Finished in 0.583 seconds with exit status 0 (successful).
+  INFO [5fa43c70] Running /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases as pi@rasp
+ DEBUG [5fa43c70] Command: /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases
+  INFO [5fa43c70] Finished in 0.025 seconds with exit status 0 (successful).
+ DEBUG [9b5dbe34] Running [ -f /var/www/html/golf/current/REVISION ] as pi@rasp
+ DEBUG [9b5dbe34] Command: [ -f /var/www/html/golf/current/REVISION ]
+ DEBUG [9b5dbe34] Finished in 0.022 seconds with exit status 0 (successful).
+ DEBUG [f9c0ac2a] Running /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null as pi@rasp
+ DEBUG [f9c0ac2a] Command: /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null
+ DEBUG [f9c0ac2a] 	d81e3a3a73e5a60b417d20db987f78824208ede4
+ DEBUG [f9c0ac2a] Finished in 0.041 seconds with exit status 0 (successful).
+ DEBUG [38537373] Running [ -f /var/www/html/golf/repo/HEAD ] as pi@rasp
+ DEBUG [38537373] Command: [ -f /var/www/html/golf/repo/HEAD ]
+ DEBUG [38537373] Finished in 0.021 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/golf/repo
+ DEBUG [eede9a09] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [eede9a09] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [eede9a09] Finished in 0.021 seconds with exit status 0 (successful).
+  INFO [56cfe8e5] Running /usr/bin/env git remote update --prune as pi@rasp
+ DEBUG [56cfe8e5] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [56cfe8e5] 	Fetching origin
+ DEBUG [56cfe8e5] 	From https://github.com/ericwingate/golf
+ DEBUG [56cfe8e5] 	   d81e3a3..5ab60fc  master     -> master
+  INFO [56cfe8e5] Finished in 0.580 seconds with exit status 0 (successful).
+ DEBUG [b7d35c6c] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [b7d35c6c] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [b7d35c6c] Finished in 0.035 seconds with exit status 0 (successful).
+  INFO [8e869322] Running /usr/bin/env mkdir -p /var/www/html/golf/releases/20170105202915 as pi@rasp
+ DEBUG [8e869322] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env mkdir -p /var/www/html/golf/releases/20170105202915 )
+  INFO [8e869322] Finished in 0.028 seconds with exit status 0 (successful).
+  INFO [75d2f82f] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170105202915 as pi@rasp
+ DEBUG [75d2f82f] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170105202915 )
+  INFO [75d2f82f] Finished in 0.080 seconds with exit status 0 (successful).
+ DEBUG [59e706dc] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [59e706dc] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [59e706dc] Finished in 0.020 seconds with exit status 0 (successful).
+ DEBUG [5cfdcc8b] Running /usr/bin/env git rev-list --max-count=1 master as pi@rasp
+ DEBUG [5cfdcc8b] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [5cfdcc8b] 	5ab60fc5677e2435a7e8e2474b0d654348fd4a3b
+ DEBUG [5cfdcc8b] Finished in 0.043 seconds with exit status 0 (successful).
+ DEBUG [6b1ae69b] Running if test ! -d /var/www/html/golf/releases/20170105202915; then echo "Directory does not exist '/var/www/html/golf/releases/20170105202915'" 1>&2; false; fi as pi@rasp
+ DEBUG [6b1ae69b] Command: if test ! -d /var/www/html/golf/releases/20170105202915; then echo "Directory does not exist '/var/www/html/golf/releases/20170105202915'" 1>&2; false; fi
+ DEBUG [6b1ae69b] Finished in 0.019 seconds with exit status 0 (successful).
+  INFO [76db217d] Running /usr/bin/env echo "5ab60fc5677e2435a7e8e2474b0d654348fd4a3b" >> REVISION as pi@rasp
+ DEBUG [76db217d] Command: cd /var/www/html/golf/releases/20170105202915 && /usr/bin/env echo "5ab60fc5677e2435a7e8e2474b0d654348fd4a3b" >> REVISION
+  INFO [76db217d] Finished in 0.022 seconds with exit status 0 (successful).
+ DEBUG [3109b57b] Running if test ! -d /var/www/html/golf/releases/20170105202915; then echo "Directory does not exist '/var/www/html/golf/releases/20170105202915'" 1>&2; false; fi as pi@rasp
+ DEBUG [3109b57b] Command: if test ! -d /var/www/html/golf/releases/20170105202915; then echo "Directory does not exist '/var/www/html/golf/releases/20170105202915'" 1>&2; false; fi
+ DEBUG [3109b57b] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO [ed4e0754] Running /usr/bin/env composer install --no-dev --prefer-dist --no-interaction --quiet --optimize-autoloader as pi@rasp
+ DEBUG [ed4e0754] Command: cd /var/www/html/golf/releases/20170105202915 && /usr/bin/env composer install --no-dev --prefer-dist --no-interaction --quiet --optimize-autoloader
+  INFO [ed4e0754] Finished in 31.981 seconds with exit status 0 (successful).
+  INFO [c28fc620] Running /usr/bin/env ln -s /var/www/html/golf/releases/20170105202915 /var/www/html/golf/releases/current as pi@rasp
+ DEBUG [c28fc620] Command: /usr/bin/env ln -s /var/www/html/golf/releases/20170105202915 /var/www/html/golf/releases/current
+  INFO [c28fc620] Finished in 0.022 seconds with exit status 0 (successful).
+  INFO [b7fc5c89] Running /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf as pi@rasp
+ DEBUG [b7fc5c89] Command: /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf
+  INFO [b7fc5c89] Finished in 0.023 seconds with exit status 0 (successful).
+ DEBUG [81a18ec2] Running /usr/bin/env ls -x /var/www/html/golf/releases as pi@rasp
+ DEBUG [81a18ec2] Command: /usr/bin/env ls -x /var/www/html/golf/releases
+ DEBUG [81a18ec2] 	20170105202022	20170105202151	20170105202308	20170105202915
+ DEBUG [81a18ec2] Finished in 0.025 seconds with exit status 0 (successful).
+  INFO Keeping 3 of 4 deployed releases on rasp
+  INFO [f4b8f8dd] Running /usr/bin/env rm -rf /var/www/html/golf/releases/20170105202022 as pi@rasp
+ DEBUG [f4b8f8dd] Command: /usr/bin/env rm -rf /var/www/html/golf/releases/20170105202022
+  INFO [f4b8f8dd] Finished in 0.050 seconds with exit status 0 (successful).
+  INFO [39dd30f5] Running cp /tmp/.env /var/www/html/golf/current/ as pi@rasp
+ DEBUG [39dd30f5] Command: cp /tmp/.env /var/www/html/golf/current/
+  INFO [39dd30f5] Finished in 0.028 seconds with exit status 0 (successful).
+  INFO [8a66ed8b] Running chmod -R 777 /var/www/html/golf/current/storage/{logs,framework} as pi@rasp
+ DEBUG [8a66ed8b] Command: chmod -R 777 /var/www/html/golf/current/storage/{logs,framework}
+  INFO [8a66ed8b] Finished in 0.024 seconds with exit status 0 (successful).
+ DEBUG [1a328a73] Running if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi as pi@rasp
+ DEBUG [1a328a73] Command: if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi
+ DEBUG [1a328a73] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO [f4485a34] Running /usr/bin/env echo "Branch master (at 5ab60fc5677e2435a7e8e2474b0d654348fd4a3b) deployed as release 20170105202915 by ewingate" >> /var/www/html/golf/revisions.log as pi@rasp
+ DEBUG [f4485a34] Command: cd /var/www/html/golf/releases && /usr/bin/env echo "Branch master (at 5ab60fc5677e2435a7e8e2474b0d654348fd4a3b) deployed as release 20170105202915 by ewingate" >> /var/www/html/golf/revisions.log
+  INFO [f4485a34] Finished in 0.039 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2017-01-05 14:54:21 -0600 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [319e38b0] Running /usr/bin/env mkdir -p /tmp as pi@rasp
+ DEBUG [319e38b0] Command: /usr/bin/env mkdir -p /tmp
+  INFO [319e38b0] Finished in 0.429 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-Golf-production-ewingate.sh 0.0%
+  INFO Uploading /tmp/git-ssh-Golf-production-ewingate.sh 100.0%
+  INFO [4a445e4d] Running /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh as pi@rasp
+ DEBUG [4a445e4d] Command: /usr/bin/env chmod 700 /tmp/git-ssh-Golf-production-ewingate.sh
+  INFO [4a445e4d] Finished in 0.043 seconds with exit status 0 (successful).
+  INFO [54efbb7d] Running /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git as pi@rasp
+ DEBUG [54efbb7d] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git ls-remote --heads https://github.com/ericwingate/golf.git )
+ DEBUG [54efbb7d] 	5ab60fc5677e2435a7e8e2474b0d654348fd4a3b	refs/heads/master
+  INFO [54efbb7d] Finished in 0.577 seconds with exit status 0 (successful).
+  INFO [6aa6f025] Running /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases as pi@rasp
+ DEBUG [6aa6f025] Command: /usr/bin/env mkdir -p /var/www/html/golf/shared /var/www/html/golf/releases
+  INFO [6aa6f025] Finished in 0.025 seconds with exit status 0 (successful).
+ DEBUG [7f93e89f] Running [ -f /var/www/html/golf/current/REVISION ] as pi@rasp
+ DEBUG [7f93e89f] Command: [ -f /var/www/html/golf/current/REVISION ]
+ DEBUG [7f93e89f] Finished in 0.025 seconds with exit status 0 (successful).
+ DEBUG [1670fc9d] Running /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null as pi@rasp
+ DEBUG [1670fc9d] Command: /usr/bin/env cat /var/www/html/golf/current/REVISION 2>/dev/null
+ DEBUG [1670fc9d] 	5ab60fc5677e2435a7e8e2474b0d654348fd4a3b
+ DEBUG [1670fc9d] Finished in 0.043 seconds with exit status 0 (successful).
+ DEBUG [49cd81d7] Running [ -f /var/www/html/golf/repo/HEAD ] as pi@rasp
+ DEBUG [49cd81d7] Command: [ -f /var/www/html/golf/repo/HEAD ]
+ DEBUG [49cd81d7] Finished in 0.019 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/golf/repo
+ DEBUG [003ac3f3] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [003ac3f3] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [003ac3f3] Finished in 0.020 seconds with exit status 0 (successful).
+  INFO [cacf8882] Running /usr/bin/env git remote update --prune as pi@rasp
+ DEBUG [cacf8882] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [cacf8882] 	Fetching origin
+  INFO [cacf8882] Finished in 0.500 seconds with exit status 0 (successful).
+ DEBUG [35216244] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [35216244] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [35216244] Finished in 0.037 seconds with exit status 0 (successful).
+  INFO [f11a2f2a] Running /usr/bin/env mkdir -p /var/www/html/golf/releases/20170105205423 as pi@rasp
+ DEBUG [f11a2f2a] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env mkdir -p /var/www/html/golf/releases/20170105205423 )
+  INFO [f11a2f2a] Finished in 0.027 seconds with exit status 0 (successful).
+  INFO [e48fec84] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170105205423 as pi@rasp
+ DEBUG [e48fec84] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/golf/releases/20170105205423 )
+  INFO [e48fec84] Finished in 0.060 seconds with exit status 0 (successful).
+ DEBUG [5d1afe74] Running if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi as pi@rasp
+ DEBUG [5d1afe74] Command: if test ! -d /var/www/html/golf/repo; then echo "Directory does not exist '/var/www/html/golf/repo'" 1>&2; false; fi
+ DEBUG [5d1afe74] Finished in 0.020 seconds with exit status 0 (successful).
+ DEBUG [d5860359] Running /usr/bin/env git rev-list --max-count=1 master as pi@rasp
+ DEBUG [d5860359] Command: cd /var/www/html/golf/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-Golf-production-ewingate.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [d5860359] 	5ab60fc5677e2435a7e8e2474b0d654348fd4a3b
+ DEBUG [d5860359] Finished in 0.045 seconds with exit status 0 (successful).
+ DEBUG [4e81bd4a] Running if test ! -d /var/www/html/golf/releases/20170105205423; then echo "Directory does not exist '/var/www/html/golf/releases/20170105205423'" 1>&2; false; fi as pi@rasp
+ DEBUG [4e81bd4a] Command: if test ! -d /var/www/html/golf/releases/20170105205423; then echo "Directory does not exist '/var/www/html/golf/releases/20170105205423'" 1>&2; false; fi
+ DEBUG [4e81bd4a] Finished in 0.018 seconds with exit status 0 (successful).
+  INFO [2170c261] Running /usr/bin/env echo "5ab60fc5677e2435a7e8e2474b0d654348fd4a3b" >> REVISION as pi@rasp
+ DEBUG [2170c261] Command: cd /var/www/html/golf/releases/20170105205423 && /usr/bin/env echo "5ab60fc5677e2435a7e8e2474b0d654348fd4a3b" >> REVISION
+  INFO [2170c261] Finished in 0.024 seconds with exit status 0 (successful).
+ DEBUG [2cf80dc5] Running if test ! -d /var/www/html/golf/releases/20170105205423; then echo "Directory does not exist '/var/www/html/golf/releases/20170105205423'" 1>&2; false; fi as pi@rasp
+ DEBUG [2cf80dc5] Command: if test ! -d /var/www/html/golf/releases/20170105205423; then echo "Directory does not exist '/var/www/html/golf/releases/20170105205423'" 1>&2; false; fi
+ DEBUG [2cf80dc5] Finished in 0.023 seconds with exit status 0 (successful).
+  INFO [590b8e61] Running /usr/bin/env composer install --no-dev --no-interaction --verbose --optimize-autoloader as pi@rasp
+ DEBUG [590b8e61] Command: cd /var/www/html/golf/releases/20170105205423 && /usr/bin/env composer install --no-dev --no-interaction --verbose --optimize-autoloader
+ DEBUG [590b8e61] 	Loading composer repositories with package information
+ DEBUG [590b8e61] 	Installing dependencies from lock file
+ DEBUG [590b8e61] 	Dependency resolution completed in 0.005 seconds
+ DEBUG [590b8e61] 	Analyzed 87 packages to resolve dependencies
+ DEBUG [590b8e61] 	Analyzed 165 rules to resolve dependencies
+ DEBUG [590b8e61] 	Package operations: 32 installs, 0 updates, 0 removals
+ DEBUG [590b8e61] 	Installs: jakub-onderka/php-console-color:0.1, vlucas/phpdotenv:v2.4.0, symfony/polyfill-mbstring:v1.3.0, symfony/var-dumper:v3.1.8, symfony/translation:v3.1.8, symfony/routing:v3.1.8, symfony/process:v3.1.8, symfony/http-foundation:v3.1.8, symfony/event-dispatcher:v3.2.1, psr/log:1.0.2, symfony/debug:v3.1.8, symfony/http-kernel:v3.1.8, symfony/finder:v3.1.8, symfony/console:v3.1.8, swiftmailer/swiftmailer:v5.4.5, paragonie/random_compat:v2.0.4, ramsey/uuid:3.5.2, nikic/php-parser:v3.0.2, jakub-onderka/php-console-highlighter:v0.3.2, dnoegel/php-xdg-base-dir:0.1, psy/psysh:v0.8.0, nesbot/carbon:1.21.0, mtdowling/cron-expression:v1.1.0, monolog/monolog:1.22.0, league/flysystem:1.0.32, symfony/polyfill-util:v1.3.0, symfony/polyfill-php56:v1.3.0, jeremeamia/SuperClosure:2.3.0, doctrine/inflector:v1.1.0, classpreloader/classpreloader:3.1.0, laravel/framework:v5.3.28, twbs/bootstrap:v3.3.7
+ DEBUG [590b8e61] 	  - Installing jakub-onderka/php-console-color (0.1)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing vlucas/phpdotenv (v2.4.0)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing symfony/polyfill-mbstring (v1.3.0)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing symfony/var-dumper (v3.1.8)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing symfony/translation (v3.1.8)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing symfony/routing (v3.1.8)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing symfony/process (v3.1.8)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing symfony/http-foundation (v3.1.8)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing symfony/event-dispatcher (v3.2.1)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing psr/log (1.0.2)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing symfony/debug (v3.1.8)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing symfony/http-kernel (v3.1.8)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing symfony/finder (v3.1.8)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing symfony/console (v3.1.8)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing swiftmailer/swiftmailer (v5.4.5)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing paragonie/random_compat (v2.0.4)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing ramsey/uuid (3.5.2)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing nikic/php-parser (v3.0.2)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing jakub-onderka/php-console-highlighter (v0.3.2)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing dnoegel/php-xdg-base-dir (0.1)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing psy/psysh (v0.8.0)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing nesbot/carbon (1.21.0)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing mtdowling/cron-expression (v1.1.0)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing monolog/monolog (1.22.0)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing league/flysystem (1.0.32)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing symfony/polyfill-util (v1.3.0)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing symfony/polyfill-php56 (v1.3.0)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing jeremeamia/superclosure (2.3.0)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing doctrine/inflector (v1.1.0)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing classpreloader/classpreloader (3.1.0)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing laravel/framework (v5.3.28)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	  - Installing twbs/bootstrap (v3.3.7)
+ DEBUG [590b8e61] 	 Loading from cache
+ DEBUG [590b8e61] 	 Extracting archive
+ DEBUG [590b8e61] 	
+ DEBUG [590b8e61] 	Generating optimized autoload files
+ DEBUG [590b8e61] 	> post-install-cmd: Illuminate\Foundation\ComposerScripts::postInstall
+ DEBUG [590b8e61] 	> post-install-cmd: php artisan optimize
+ DEBUG [590b8e61] 	Generating optimized class loader
+ DEBUG [590b8e61] 	Compiling common classes
+  INFO [590b8e61] Finished in 32.102 seconds with exit status 0 (successful).
+  INFO [b1e9227b] Running /usr/bin/env ln -s /var/www/html/golf/releases/20170105205423 /var/www/html/golf/releases/current as pi@rasp
+ DEBUG [b1e9227b] Command: /usr/bin/env ln -s /var/www/html/golf/releases/20170105205423 /var/www/html/golf/releases/current
+  INFO [b1e9227b] Finished in 0.026 seconds with exit status 0 (successful).
+  INFO [061f3b89] Running /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf as pi@rasp
+ DEBUG [061f3b89] Command: /usr/bin/env mv /var/www/html/golf/releases/current /var/www/html/golf
+  INFO [061f3b89] Finished in 0.027 seconds with exit status 0 (successful).
+ DEBUG [d3e9bcc1] Running /usr/bin/env ls -x /var/www/html/golf/releases as pi@rasp
+ DEBUG [d3e9bcc1] Command: /usr/bin/env ls -x /var/www/html/golf/releases
+ DEBUG [d3e9bcc1] 	20170105202151	20170105202308	20170105202915	20170105205423
+ DEBUG [d3e9bcc1] Finished in 0.042 seconds with exit status 0 (successful).
+  INFO Keeping 3 of 4 deployed releases on rasp
+  INFO [abd73b70] Running /usr/bin/env rm -rf /var/www/html/golf/releases/20170105202151 as pi@rasp
+ DEBUG [abd73b70] Command: /usr/bin/env rm -rf /var/www/html/golf/releases/20170105202151
+  INFO [abd73b70] Finished in 0.036 seconds with exit status 0 (successful).
+  INFO [47e35929] Running cp /tmp/.env /var/www/html/golf/current/ as pi@rasp
+ DEBUG [47e35929] Command: cp /tmp/.env /var/www/html/golf/current/
+  INFO [47e35929] Finished in 0.026 seconds with exit status 0 (successful).
+  INFO [bca7f29a] Running chmod -R 777 /var/www/html/golf/current/storage/{logs,framework} as pi@rasp
+ DEBUG [bca7f29a] Command: chmod -R 777 /var/www/html/golf/current/storage/{logs,framework}
+  INFO [bca7f29a] Finished in 0.020 seconds with exit status 0 (successful).
+ DEBUG [690728fa] Running if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi as pi@rasp
+ DEBUG [690728fa] Command: if test ! -d /var/www/html/golf/releases; then echo "Directory does not exist '/var/www/html/golf/releases'" 1>&2; false; fi
+ DEBUG [690728fa] Finished in 0.041 seconds with exit status 0 (successful).
+  INFO [85bebca2] Running /usr/bin/env echo "Branch master (at 5ab60fc5677e2435a7e8e2474b0d654348fd4a3b) deployed as release 20170105205423 by ewingate" >> /var/www/html/golf/revisions.log as pi@rasp
+ DEBUG [85bebca2] Command: cd /var/www/html/golf/releases && /usr/bin/env echo "Branch master (at 5ab60fc5677e2435a7e8e2474b0d654348fd4a3b) deployed as release 20170105205423 by ewingate" >> /var/www/html/golf/revisions.log
+  INFO [85bebca2] Finished in 0.023 seconds with exit status 0 (successful).
