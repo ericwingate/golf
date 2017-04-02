@@ -13,9 +13,19 @@ class CreateGolfRoundsTable extends Migration
      */
     public function up()
     {
-        Schema::create('golf_rounds', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
+        $i = 1;
+
+        Schema::create('golf_rounds', function (Blueprint $table) use ($i) {
+        $table->increments('id');
+        $table->integer('user_id')->unsigned();
+        $table->foreign('user_id')->references('id')->on('users');
+        while( $i < 19 ) {
+	        $table->integer('hole'.$i);
+          $table->boolean('hole'.$i.'_fairway')->nullable();
+          $table->integer('hole'.$i.'_putts')->nullable();
+          $i++;
+        }
+        $table->timestamps();
         });
     }
 
